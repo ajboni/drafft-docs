@@ -1,7 +1,12 @@
 [
   {
-    "caption": "Github",
-    "url": "https://github.com/ajboni/docurry",
+    "caption": "Buy Full Edition",
+    "url": "https://baj.itch.io/speechr-full",
+    "class": "btn-secondary"
+  },
+  {
+    "caption": "Download",
+    "url": "https://baj.itch.io/speechr",
     "class": "btn-primary"
   }
 ]

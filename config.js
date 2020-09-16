@@ -1,24 +1,8 @@
-/**
- * Copyright (C) 2020 Alexis Boni
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License as
- * published by the Free Software Foundation, either version 3 of the
- * License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 exports.config = {
   /* Project Name and logo on the navbar. */
-  PROJECT_NAME: "Docurry",
-  PROJECT_DESCRIPTION: "A spicy, zero-config documentation site generator.",
+  PROJECT_NAME: "Speechr",
+  PROJECT_DESCRIPTION:
+    "Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...",
 
   /* Folder where src docs are located. */
   CONTENT_FOLDER: "./content",
@@ -48,20 +32,20 @@ exports.config = {
         table_of_contents: "Table of contents",
       },
     },
-    {
-      id: "es",
-      caption: "Español",
-      iso: "es",
-      translations: {
-        no_search_result:
-          "No se han encontrado resultados. Pruebe otra búsqueda",
-        table_of_contents: "Tabla de contenidos",
-      },
-    },
+    // {
+    //   id: "es",
+    //   caption: "Español",
+    //   iso: "es",
+    //   translations: {
+    //     no_search_result:
+    //       "No se han encontrado resultados. Pruebe otra búsqueda",
+    //     table_of_contents: "Tabla de contenidos",
+    //   },
+    // },
   ],
 
   /* Include a language selector on landing page and docs */
-  ADD_LANGUAGE_SELECTOR: true,
+  ADD_LANGUAGE_SELECTOR: false,
 
   /* Should we show the default language doc if the localized version cannot be found ? */
   FALLBACK_TO_DEFAULT_LANGUAGE: true,
@@ -73,7 +57,7 @@ exports.config = {
   AUTO_GENERATE_SIDEBAR: true,
 
   /* Add Table Of contents widget on doc page.*/
-  ADD_TOC: true,
+  ADD_TOC: false,
 
   /* Add Footer widget on doc page.*/
   ADD_FOOTER: true,
