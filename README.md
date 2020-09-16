@@ -1,24 +1,20 @@
-# Docurry
+# Speechr App
 
-A spicy, zero-config documentation site generator.
+> Cross-platform collaborative and organized game development.
 
-## Features
+SPEECHR is a multiplatform collaborative design and development tool for easy and organised game development. It features a GDDs editor, Script editor, Dialogue Trees editor, a generic Database Editor and game ready exporter in plain JSON format.
 
-> Warning: This project is alpha and may contain undocumented and untested features
+The project aims to solve file clutter while providing a centralised environment for every aspect of your project.
 
-- [x] Write content in pure markdown.
-- [x] Plain HTML output. Static. No routers. No frameworks.
-- [x] Multi-language support
-- [x] SEO Friendly
-- [x] Mobile Friendly
-- [x] Auto generate search
-- [x] Auto generate landing page and favicons.
-- [x] Auto generate sidebar.
-- [x] Auto generate Table of contents.
-- [ ] Live Reload (Work in progress)
-- [x] Zero Config.
-- [x] 🚀 Blazing fast! 🚀
+You can use SPEECHR in evaluation mode for as long as you want, without any missing feature, limitation or nag screen.
 
-Docurry is VERY inspired [Docsify](https://github.com/docsifyjs/) and EXTREMELY based on the [Spectre Doc Site](https://picturepan2.github.io/spectre/getting-started.html)
+To support the tool or to use it for commercial purposes, you can buy a key for the full version [HERE](https://baj.itch.io/speechr-full).
 
-Demo: https://docurry.aboni.dev
+### Features
+
+- GDDs, Scripts, Dialogue Trees and Generic Database Editor and exporter.
+- One repository: All your data in one place, sorted, searchable, editable.
+- Your Game, your data: You own your data, it lives on your computer and it can be optionally synced to a remote database.
+- Multi user: Several users can work offline on the same database and sync changes in real time to a remote master database.
+- Nice UI: Because staring at a screen while building the next big hit should be a pleasant experience.
+- Engine Agnostic: Standard JSON export for any usage.

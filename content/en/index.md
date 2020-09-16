@@ -1,19 +1,22 @@
 ---
-title: Docurry
-description: A Spicy, Zero-Config Documentation Site Generator.
+title: Speechr
+description: Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and More!
 ---
 
-![Docurry Logo](/img/logo.png)
+![logo](/img/logo.png ':size=120')
 
-# Docurry
+# Speechr
 
-> A Spicy, Zero-Config Documentation Site Generator.
+> Cross-platform collaborative and organized game development.
 
-1. Simple and fast.
-2. Statically built HTML. No router.
-3. Multiple languages.
-4. SEO and Mobile First
-5. Open Source.
 
-- [Docs](//docs/)
-- [Github](https://github.com/ajboni/docurry)
+1. Game Design Document (GDD) Editor
+2. Script Editor
+3. Dialogue Tree Editor
+4. Multi user
+5. Engine Agnostic
+6. One repository, your Game, your data
+7. And more!
+    
+- [Learn More](/en/docs)
+- [Download (itch.io)](https://baj.itch.io/speechr)
