@@ -1,0 +1,70 @@
+<!--
+ Copyright (C) 2020 Alexis Boni
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as
+ published by the Free Software Foundation, either version 3 of the
+ License, or (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+ 
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{PROJECT_NAME}}</title>
+    <head>
+      <meta name="description" content="{{PROJECT_DESCRIPTION}}" />
+    </head>
+    <link rel="stylesheet" href="/css/docs.css" />
+    <link rel="preload" href="/css/flags-css/flag-icon.min.css" as="style" />
+    <link rel="preload" href="/js/fuse/fuse.min.js" as="script" />
+    <link rel="stylesheet" href="/css/flags-css/flag-icon.min.css" />
+  </head>
+  <body>
+    <header class="docs-navbar" id="navbar-container">
+      <!-- Navbar content will be appended here HERE (id='navbar') -->
+    </header>
+
+    <div class="docs-container off-canvas off-canvas-sidebar-show">
+      <nav class="docs-sidebar off-canvas-sidebar" id="sidebar-container">
+        <!-- Docs content will be appended here HERE (id='sidebar') -->
+      </nav>
+      <a class="off-canvas-overlay" href="#close"></a>
+
+      <div class="docs-wrapper">
+        <article class="docs-content" id="docs-content-container">
+          <!-- Docs content HERE (id='docs-content-container') -->
+          <nav id="next-prev-container" class="next-prev-container">
+            <!-- Next Previous buttons here -->
+          </nav>
+          <!-- Footer -->
+          <footer class="docs-footer" id="footer-container">
+            <!-- Footer content will be appended here HERE (id='footer-container') -->
+          </footer>
+        </article>
+
+        <div class="" id="toc-container"></div>
+        <!-- Table of contents will be appended HERE -->
+      </div>
+    </div>
+
+    {{#ENABLE_SEARCH}}
+    <script src="/js/fuse/fuse.min.js"></script>
+    <script
+      src="/js/docs-search.js"
+      data-lang="{{LANG.id}}"
+      data-no_search_result="{{LANG.translations.no_search_result}}"
+    ></script>
+    {{/ENABLE_SEARCH}}
+    <script src="/js/docs-toc.js"></script>
+  </body>
+</html>

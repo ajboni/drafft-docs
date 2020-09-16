@@ -1,0 +1,49 @@
+<!--
+ Copyright (C) 2020 Alexis Boni
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as
+ published by the Free Software Foundation, either version 3 of the
+ License, or (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+ 
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+{{^isFolder}}
+<li class="menu-item">
+  <a href="{{url}}" {{#target}}target={{target}} rel="noopener noreferrer"{{/target}}>
+    {{#isSelected}}<strong>{{/isSelected}} {{caption}} {{#isSelected}} </strong
+    >{{/isSelected}}</a
+  >
+</li>
+{{/isFolder}}
+<!--  -->
+{{#isFolder}}
+<div class="accordion-container">
+  <div class="accordion">
+    <input
+      id="accordion-{{name}}"
+      type="checkbox"
+      name="docs-accordion-{{name}}"
+      hidden=""
+      {{checked}}
+    />
+    <label class="accordion-header c-hand" for="accordion-{{name}}">
+      <i class="icon icon-arrow-right"></i>
+
+      {{caption}}
+    </label>
+    <div class="accordion-body">
+      <ul class="menu menu-nav">
+        {{#children}} {{>item}} {{/children}}
+      </ul>
+    </div>
+  </div>
+</div>
+{{/isFolder}}

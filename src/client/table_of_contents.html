@@ -1,0 +1,49 @@
+<!--
+ Copyright (C) 2020 Alexis Boni
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as
+ published by the Free Software Foundation, either version 3 of the
+ License, or (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+ 
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+{{#ADD_TOC}}
+
+<!-- Toc Toggle Button -->
+<a
+  class="btn btn-link btn-action"
+  href="#toc-sidebar-container"
+  aria-label="Toggle Table of contents"
+  id="toc-toggle-button"
+>
+  <i class="icon icon-apps"> </i>
+</a>
+
+<!-- TOC Mobile -->
+<nav class="docs-toc-mobile off-canvas-sidebar" id="toc-sidebar-container">
+  <aside class="docs-toc" id="toc-mobile-container">
+    <div class="docs-toc-title">{{LANG.translations.table_of_contents}}</div>
+    {{#TOC}}
+    <a href="{{hash}}" class="toc-{{tag}}">{{content}}</a>
+
+    {{/TOC}}
+  </aside>
+</nav>
+<a class="off-canvas-overlay" href="#close"></a>
+
+<!-- TOC Desktop -->
+<aside class="docs-toc" id="toc-container">
+  <div class="docs-toc-title">{{LANG.translations.table_of_contents}}</div>
+  {{#TOC}}
+  <a href="{{hash}}" class="toc-{{tag}}">{{content}}</a>
+  {{/TOC}}
+</aside>
+{{/ADD_TOC}}
