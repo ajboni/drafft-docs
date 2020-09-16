@@ -1,6 +1,6 @@
 ---
 title: Forums
 caption: Forums
-url: https://baj.itch.io/speechr-full/community
+url: https://itch.io/t/737908/supporters-forum
 external: true
 ---

@@ -1,6 +1,6 @@
 ---
-title: Buy Full Edition
-caption: Buy Full Edition
-url: https://baj.itch.io/speechr-full
+title: Forums
+caption: Forums
+url: https://baj.itch.io/speechr-full/community
 external: true
 ---
