@@ -4,6 +4,9 @@ exports.config = {
   PROJECT_DESCRIPTION:
     "Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...",
 
+  /* Only used for Facebook and Twitter meta tags. Set it to null to ignore */
+  PROJECT_URL: "https://speechr.aboni.dev",
+
   /* Folder where src docs are located. */
   CONTENT_FOLDER: "./content",
 

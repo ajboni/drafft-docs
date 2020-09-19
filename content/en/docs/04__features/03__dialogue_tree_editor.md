@@ -1,6 +1,7 @@
 ---
 title: Dialogue Tree Editor
-description: Node based dialogue tree editor for game dialogue and cut-scenes.
+description: Node based, branching dialogue tree editor for game dialogue, cut-scenes and visual novels.
+img: /img/dialogue-tree-editor.png
 ---
 
 # POWERFUL DIALOGUE TREE EDITOR
