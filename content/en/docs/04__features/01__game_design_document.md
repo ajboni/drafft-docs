@@ -2,6 +2,7 @@
 title: Game Design Document (GDD)
 description: Write and organize your Game design documents.
 caption: Game Design Document (GDD)
+img: /img/gdd-01.png
 ---
 
 # GAME DESIGN DOCUMENTS

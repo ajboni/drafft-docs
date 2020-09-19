@@ -1,6 +1,7 @@
 ---
 title: Script editor for game development
 description: Speechr's powerful script editor uses simple plain text to tell your game's characters exactly what to do and how to do it.
+img: /img/scripting-02.png
 ---
 
 # SCRIPTING

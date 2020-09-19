@@ -1,6 +1,7 @@
 ---
 title: Kanban Boards
-description: Take notes of your to-dos in a quick and straightforward fashion.
+description: Take notes of your last minute game design idea.
+img: /img/kanban-01.png
 ---
 
 # KANBAN BOARDS

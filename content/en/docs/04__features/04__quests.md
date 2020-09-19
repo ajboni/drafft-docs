@@ -1,6 +1,7 @@
 ---
-title: Quest editor
+title: Quest editor for game design.
 description: Organize your game's quests, objectives or properties that need to be tracked in the course of a game.
+img: /img/quests-01.png
 ---
 
 # Quests

@@ -1,6 +1,7 @@
 ---
 title: Director Module
 description: Generate and export your game voice-over scripts for voice actors.
+img: /img/director-01.png
 ---
 
 # THE DIRECTOR MODULE

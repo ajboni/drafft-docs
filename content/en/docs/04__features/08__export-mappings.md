@@ -1,6 +1,7 @@
 ---
 title: Export Mappings
 description: Create mappings for target scripting languages.
+img: /img/export-mappings-01.png
 ---
 
 # CUSTOMIZABLE EXPORT MAPPINGS
