@@ -14,13 +14,15 @@ jobs:
       - name: Checkout the repo
         uses: actions/checkout@v2
         with:
-          ref: gh-pages
-          fetch-depth: 0
-      - name: Generate the sitemap
-        id: sitemap
-        uses: cicirello/generate-sitemap@v1.5.0
-        with:
-          base-url-path: https://speechr.aboni.dev
+          ref: "gh-pages"
+      - name: "Generate sitemap"
+        run: |
+          npx sitemap-generator-cli https://speechr.aboni.dev   
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Sitemap Generated"
+          git push
       - name: Ping search engines
         uses: atymic/sitemap-ping-action@master
         with:
