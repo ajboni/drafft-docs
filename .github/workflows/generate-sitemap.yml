@@ -1,7 +1,11 @@
 name: Generate xml sitemap
 
 on:
-  page_build:
+  workflow_run:
+    workflows: ["Deploy"]
+    types:
+      - completed
+      - requested
 
 jobs:
   sitemap_job:

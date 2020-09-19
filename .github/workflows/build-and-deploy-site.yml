@@ -1,5 +1,5 @@
 # This workflow builds and deploys Docurry build folder into gh-pages branch.
-name: Docurry Deploy
+name: Deploy
 
 on:
   push:
