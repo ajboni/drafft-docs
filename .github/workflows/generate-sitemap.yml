@@ -19,6 +19,10 @@ jobs:
         uses: cicirello/generate-sitemap@v1.5.0
         with:
           base-url-path: https://speechr.aboni.dev
+      - name: Ping search engines
+        uses: atymic/sitemap-ping-action@master
+        with:
+          sitemap-url: https://speechr.aboni.dev/sitemap.xml
       - name: Output stats
         run: |
           echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
