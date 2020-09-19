@@ -1,6 +1,7 @@
 ---
 title: Speechr
 description: Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and More!
+img: /img/dialogue-tree-editor.png
 ---
 
 ![logo](/img/logo.png ":size=120")
