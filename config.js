@@ -69,7 +69,7 @@ exports.config = {
   ADD_NEXT_PREVIOUS_BUTTONS: true,
 
   /* If 'auto', autogenerate background options using trianglify (checkout the license) otherwise specify path for image */
-  LANDING_PAGE_BG: "auto",
+  LANDING_PAGE_BG: "content/img/bg.jpg",
 
   /* File contents of this list will be available for use as a variable in a template or markdown as {{filepath_extension}} */
   EXTRA_FILES_AS_VARIABLES: ["README.md", "config.js"],
