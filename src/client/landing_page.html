@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{PROJECT_NAME}}</title>
+    <head>
+      <meta name="description" content="{{PROJECT_DESCRIPTION}}" />
+    </head>
+    <link rel="stylesheet" href="/css/landing_page.css" />
+    <link rel="preload" href="/css/flags-css/flag-icon.min.css" as="style" />
+    <link rel="stylesheet" href="/css/flags-css/flag-icon.min.css" />
+  </head>
+  <body>
+    <div class="cover">
+      {{#ADD_LANGUAGE_SELECTOR}}
+      <nav id="nav">
+        <div class="popover popover-left">
+          <button class="btn btn-sm" aria-label="Translations">
+            <img
+              height="24"
+              width="20"
+              src="/img/icons/translate.svg"
+              alt="Translation Icon"
+            />
+          </button>
+          <div class="popover-container">
+            <div class="language-selector">
+              {{#LANGUAGES}}
+              <a class="text-dark" href="/{{id}}">
+                <span class="flag-icon flag-icon-{{iso}}"></span>{{caption}}
+              </a>
+              {{/LANGUAGES}}
+            </div>
+          </div>
+        </div>
+      </nav>
+      {{/ADD_LANGUAGE_SELECTOR}}
+
+      <main id="cover-content" class="cover-content"></main>
+    </div>
+  </body>
+</html>

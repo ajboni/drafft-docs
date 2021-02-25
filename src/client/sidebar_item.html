@@ -1,0 +1,32 @@
+{{^isFolder}}
+<li class="menu-item">
+  <a href="{{url}}" {{#target}}target={{target}} rel="noopener noreferrer"{{/target}}>
+    {{#isSelected}}<strong>{{/isSelected}} {{caption}} {{#isSelected}} </strong
+    >{{/isSelected}}</a
+  >
+</li>
+{{/isFolder}}
+<!--  -->
+{{#isFolder}}
+<div class="accordion-container">
+  <div class="accordion">
+    <input
+      id="accordion-{{name}}"
+      type="checkbox"
+      name="docs-accordion-{{name}}"
+      hidden=""
+      {{checked}}
+    />
+    <label class="accordion-header c-hand" for="accordion-{{name}}">
+      <i class="icon icon-arrow-right"></i>
+
+      {{caption}}
+    </label>
+    <div class="accordion-body">
+      <ul class="menu menu-nav">
+        {{#children}} {{>item}} {{/children}}
+      </ul>
+    </div>
+  </div>
+</div>
+{{/isFolder}}
