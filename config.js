@@ -11,7 +11,9 @@ exports.config = {
   CONTENT_FOLDER: "./content",
 
   /* Images, relative to CONTENT_FOLDER  */
-  PROJECT_LOGO: "img/logo.png",
+  PROJECT_LOGO: "img/icon.png",
+
+  NAVBAR_LOGO: "img/logo_white_2.png",
 
   /*   Folder where built files will be located. */
   BUILD_FOLDER: "./build",
@@ -69,6 +71,7 @@ exports.config = {
   ADD_NEXT_PREVIOUS_BUTTONS: true,
 
   /* If 'auto', autogenerate background options using trianglify (checkout the license) otherwise specify path for image */
+  //   LANDING_PAGE_BG: "content/img/bg.jpg",
   LANDING_PAGE_BG: "content/img/bg.jpg",
 
   /* File contents of this list will be available for use as a variable in a template or markdown as {{filepath_extension}} */

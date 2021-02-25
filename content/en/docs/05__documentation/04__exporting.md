@@ -10,13 +10,13 @@ When an __game export__ is performed, the Export Mappings kicks in and modify, i
 
 > A recognized line is one of the following:   
 >   
-> [#audiotag]::Actor::Speech text [?emotion]  
-> ::Actor::Speech text [?emotion]  
+> [#audiotag]::Actor::Speech text [?expression]  
+> ::Actor::Speech text [?expression]  
 > <Command(?param1, ?param2, ?etc)>  
 >
-> *emotion*  and *param* are optional.
+> *expression*  and *param* are optional.
 
-To generate the mappings, create the desired output using the following variables: `%tag - %actor - %speech - %emotion - %command - %params or %params(separator)`. 
+To generate the mappings, create the desired output using the following variables: `%tag - %actor - %speech - %expression - %command - %params or %params(separator)`. 
 For example, you could set up the speech export mapping to rewrite the output as a dict inside JSON so its easily parseable:
 
 ![Export Mapping](/img/export-mappings-02.png)

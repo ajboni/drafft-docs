@@ -4,11 +4,7 @@ description: Cross-platform collaborative and organized game development. Dialog
 img: /img/dialogue-tree-editor.png
 ---
 
-![logo](/img/logo.png ":size=120")
-
-# Drafft
-
-> Cross-platform collaborative and organized game development.
+![logo](/img/logo.png ":size=20")
 
 1. Game Design Document (GDD) Editor
 2. Script Editor

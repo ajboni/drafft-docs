@@ -29,20 +29,20 @@ Fade commands `<FadeOut(?params)>` and `<FadeIn(?params)>` also get some special
 <WalkTo(x,y,z)>
 ```
 
-Commands can also be renamed at export to a syntax more useful for the target engine. See [Export Mappings](export_mappings)
+Commands can also be renamed at export to a syntax more useful for the target engine. See [Export Mappings](exporting.html)
 
 ## Actor Line (with speech tag)
 
-`::Actor::Actor Line [emotion]` or `[#speechTag] ::Actor::Actor Line [emotion]`
+`::Actor::Actor Line [expression]` or `[#speechTag] ::Actor::Actor Line [expression]`
 
 This is the most important concept in drafft, this line represent a line of speech an actor says. It has several uses:
 
 - Identifying actors to make the actor database.
 - Identifying speech lines to auto generate tags for voice-overs.
 - Include this line on the resulting screenplay.
-- Include emotions in screenplay.
+- Include expressions in screenplay.
 
-Actor lines can also be renamed at export to a syntax more useful for the target engine. See [Export Mappings](export_mappings)
+Actor lines can also be renamed at export to a syntax more useful for the target engine. See [Export Mappings](exporting.html)
 
 ### Examples:
 

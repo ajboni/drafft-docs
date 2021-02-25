@@ -15,6 +15,17 @@ html {
   scroll-behavior: smooth;
 }
 
+.iframe-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  iframe {
+    max-width: 550px;
+    text-align: center;
+    height: 168px;
+  }
+}
 .docs-content h1 {
   font-size: 1.8rem;
 }

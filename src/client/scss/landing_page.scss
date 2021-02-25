@@ -56,7 +56,7 @@ ol {
   flex-flow: column;
 }
 .cover main img {
-  width: 15%;
+  width: 35%;
 }
 
 .cover p {
@@ -168,6 +168,13 @@ ol {
 @media (max-width: 996px) {
   .cover main img {
     // max-width: %;
-    min-width: 20%;
+    min-width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cover main img {
+    // max-width: %;
+    min-width: 70%;
   }
 }

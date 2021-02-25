@@ -10,7 +10,7 @@ Drafft's powerful script editor uses simple plain text to tell your game's chara
 
 ![Script Editor Example](/img/scripting-01.png)
 
-Drafft supports scripting in several languages complimenting each one with its very simple own speech language which helps to extract and identify text for voice-overs, emotions, commands and functions.
+Drafft supports scripting in several languages complimenting each one with its very simple own speech language which helps to extract and identify text for voice-overs, expressions, commands and functions.
 
 Everything is converted to standard JSON when exporting, making the import process on the game engine quite straightforward.
 

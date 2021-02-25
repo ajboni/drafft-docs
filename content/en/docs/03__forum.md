@@ -1,6 +1,6 @@
 ---
-title: Forums
-caption: Forums
-url: https://itch.io/t/737908/supporters-forum
+title: Discussions
+caption: Discussions
+url: https://github.com/ajboni/drafft-docs/discussions
 external: true
 ---
