@@ -37,6 +37,8 @@ Remember that making backups is always a good practice.
 
 - Couchdb doesn’t allow capital letters so drafft doesnt allow it either (when you create it uppercase the databse name will be renamed to lowercase).
 - All table names will appear as `drafft_project_name_lowercase`
+- CORS must be enabled in couchdb: https://docs.couchdb.org/en/1.3.0/cors.html
+- Database url MUST start with http:// or https://
 
 ## Video
 
