@@ -95,16 +95,19 @@ ol {
 .cover ul li {
   font-size: 0.8rem;
   min-height: 2rem;
-  padding: 0.35rem 0.6rem;
+  //   padding: 0.35rem 0.6rem;
   background: $primary-color;
   border-color: $primary-color;
   color: #fff;
   border-radius: 0.1rem;
   cursor: pointer;
+  display: flex;
 }
 
 .cover ul li a {
   color: inherit;
+  padding: 10px 20px;
+  line-height: 100%;
 }
 
 .cover h5 {
