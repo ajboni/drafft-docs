@@ -13,8 +13,9 @@ DRAFFT is a multiplatform collaborative design and development tool for easy and
 The project aims to solve file clutter while providing a centralized environment for every aspect of your project.
 
 <div class='iframe-container'>
-<iframe src="https://itch.io/embed/850148?bg_color=ffffff&amp;fg_color=1e1e1e&amp;link_color=7c5875&amp;border_color=e4e7ec" width="552" height="167" frameborder="0"><a href="https://baj.itch.io/drafft">drafft by baj</a></iframe>
+<iframe src="https://itch.io/embed/850148?bg_color=1d1f22&amp;fg_color=c5c8c6&amp;link_color=7c5875&amp;border_color=505357" width="552" height="167" frameborder="0"><a href="https://baj.itch.io/drafft">drafft by baj</a></iframe>
 </div>
+
 
 ### Features
 

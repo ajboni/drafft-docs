@@ -7,8 +7,12 @@
   background: $dark-color;
   justify-content: space-between;
   width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px,
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 4px 0px, rgba(0, 0, 0, 0.05) 0px 2px 8px 0px;
+
+  .label.label-secondary {
+    background-color: #2d2d2d;
+  }
 }
 
 .docs-navbar .navbar-left {

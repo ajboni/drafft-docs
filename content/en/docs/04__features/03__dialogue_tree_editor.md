@@ -14,3 +14,10 @@ A tree structure to show the flow and branching of the scene **and** a scripting
 Complex scenes can be made without cluttering the screen with tree nodes, but at the same time having a visual representation really helps to visualize all the possible outcomes.
 
 <iframe width="560" height="615" src="https://www.youtube.com/embed/ZGONWO0-ly0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Dialogue player
+Simulate your script and branching paths with a built-in simple dialogue player.
+
+![Dialogue Player Example](/img/dialogue-player.png)
+

@@ -4,7 +4,7 @@
 @import "node_modules/spectre.css/src/spectre.scss";
 @import "node_modules/spectre.css/src/spectre-exp.scss";
 @import "node_modules/spectre.css/src/spectre-icons.scss";
-@import "node_modules/highlight.js/scss/github.scss";
+@import "node_modules/highlight.js/scss/railscasts.scss";
 
 @import "_docs_navbar.scss";
 @import "_docs_search.scss";
@@ -46,6 +46,8 @@ ol {
 
 body {
   min-height: 100vh;
+  background: #222326;
+  color: #b9b9b9;
 }
 
 header {
@@ -190,7 +192,7 @@ body,
   border-top: 1px solid #eef0f3;
 }
 .docs-footer a {
-  color: #66758c;
+  //   color: #b18dc8;
 }
 .docs-footer p {
   margin-bottom: 0.5rem;
@@ -202,7 +204,7 @@ body,
   justify-content: space-between;
 }
 .docs-content .next-prev-container a {
-  color: #66758c;
+  //   color: #b18dc8;
 }
 
 @media (max-width: 960px) {
@@ -279,16 +281,20 @@ pre.hljs code {
 }
 
 code {
-  padding: 0.2em 0.4em;
+  padding: 0.25em 0.4em;
   margin: 0;
-  background-color: rgba(27, 31, 35, 0.05);
-  border-radius: 6px;
-  color: #24292e;
+  background-color: rgba(76, 79, 78, 0.2);
+  border-radius: 4px;
+  color: #c8c8c8;
+  //font-size: 0.65rem !important;
 }
 
 pre.hljs {
   padding: 2.2em 1.4rem;
   position: relative;
+  background-color: rgba(76, 79, 78, 0.2);
+  border-radius: 4px;
+  color: #c8c8c8;
 }
 
 .language-caption {
@@ -300,10 +306,11 @@ pre.hljs {
 }
 
 blockquote {
-  border-left: 0.2rem solid darken($color: $warning-color, $amount: 35);
+  border-left: 0.3rem solid #283f36;
   background-color: $warning-color;
   border-radius: 0.1rem;
   margin: 0 0 1.2rem 0;
+  background: #2e4e42;
 }
 
 code,

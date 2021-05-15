@@ -94,7 +94,7 @@ ol {
 
 .cover ul li {
   font-size: 0.8rem;
-  min-height: 2rem;
+  min-height: 1rem;
   //   padding: 0.35rem 0.6rem;
   background: $primary-color;
   border-color: $primary-color;
@@ -102,6 +102,7 @@ ol {
   border-radius: 0.1rem;
   cursor: pointer;
   display: flex;
+  flex-shrink: 0;
 }
 
 .cover ul li a {

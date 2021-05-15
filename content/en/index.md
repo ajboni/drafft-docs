@@ -14,4 +14,4 @@ img: /img/dialogue-tree-editor.png
 6. And more!
 
 - [Learn More](/en/docs)
-- [Download (itch.io)](https://baj.itch.io/drafft)
+- [Download](https://baj.itch.io/drafft)

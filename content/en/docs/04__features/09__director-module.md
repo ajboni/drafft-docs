@@ -11,3 +11,5 @@ Export voice-over scripts in industry standard script format or just as a regula
 Export tagged lines for audio processing, clip identification and localization.
 
 ![director](/img/director-01.png)
+
+![director](/img/director-02.png)

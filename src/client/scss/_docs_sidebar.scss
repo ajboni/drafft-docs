@@ -2,6 +2,12 @@
   display: flex;
   flex-direction: column;
   padding: 0rem;
+
+  .form-input {
+    background: #222326;
+    border-color: #313233;
+    color: unset;
+  }
 }
 
 .off-canvas .off-canvas-overlay {
@@ -15,6 +21,7 @@
   //   box-shadow: 2px 0px 3px 0px rgba(0, 0, 0, 0.23);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.18), 0 2px 4px 0 rgba(0, 0, 0, 0.22);
   z-index: 98;
+  background: #25282c;
 }
 
 .docs-sidebar .docs-nav {
@@ -42,14 +49,14 @@
   > .accordion
   > input
   ~ .accordion-header {
-  color: #455060;
+  color: #b1beba;
   font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .docs-sidebar .accordion input:checked ~ .accordion-header {
-  color: #505c6e;
+  color: #adc5bc;
 }
 
 .accordion .accordion-body {
@@ -76,7 +83,7 @@
 .docs-sidebar .accordion .menu .menu-item > a,
 .docs-sidebar .docs-nav > .menu-item > a {
   background: 0 0;
-  color: #66758c;
+  color: #b9b9b9;
   display: inline-block;
   padding: 0.1rem 0.1rem;
 }
