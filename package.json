@@ -34,7 +34,7 @@
     "jimp": "^0.16.1",
     "jsdom": "^16.4.0",
     "live-server": "1.2.1",
-    "markdown-it": "^12.0.2",
+    "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^6.0.1",
     "markdown-it-emoji": "^2.0.0",
     "markdown-it-external-links": "0.0.6",
