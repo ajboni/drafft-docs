@@ -43,7 +43,7 @@
     "markdown-it-task-lists": "^2.1.1",
     "minimatch": "^3.0.4",
     "mustache": "^4.1.0",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "pretty": "^2.0.0",
     "purgecss": "^3.0.0",
     "spectre.css": "^0.5.9",
