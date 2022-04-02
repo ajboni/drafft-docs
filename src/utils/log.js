@@ -17,7 +17,7 @@
 
 import chalk from "chalk";
 
-const { gray, green, red, yellow, bold } = chalk;
+const { gray, green, red, yellow, bold, hex } = chalk;
 
 export function logStatus(msg) {
   console.log(gray`${msg}`);
