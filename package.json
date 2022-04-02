@@ -20,7 +20,7 @@
     "chalk": "^5.0.1",
     "chokidar": "^3.5.3",
     "columnify": "^1.6.0",
-    "concurrently": "^7.0.0",
+    "concurrently": "^7.1.0",
     "directory-tree": "^3.2.2",
     "favicons": "^6.2.2",
     "flag-icon-css": "^3.5.0",
