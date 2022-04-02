@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: "17"
           check-latest: true
-      - run: npm install
+      - run: npm install --force
       - run: npm run build
       - run: ls -lha ./build
       - name: Deploy
