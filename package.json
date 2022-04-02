@@ -1,7 +1,7 @@
 {
   "name": "docurry",
-  "version": "1.0.0",
-  "description": "A spicy, zero-config static documentation site generator.",
+  "version": "1.0.1",
+  "description": "Drafft Docs",
   "main": "index.js",
   "scripts": {
     "dev": "clear && rm -rf ./build && NODE_ENV=development concurrently --names \"build,webserver\" \"npm:build\" \"wait-on ./build/.build.log && npx http-server  --no-browser ./build\"",
