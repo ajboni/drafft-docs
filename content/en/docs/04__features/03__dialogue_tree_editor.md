@@ -15,9 +15,10 @@ Complex scenes can be made without cluttering the screen with tree nodes, but at
 
 <iframe width="560" height="615" src="https://www.youtube.com/embed/ZGONWO0-ly0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
 ## Dialogue player
+
 Simulate your script and branching paths with a built-in simple dialogue player.
 
 ![Dialogue Player Example](/img/dialogue-player.png)
 
+![Dialogue Player Video](/img/dialogue-player.gif)
