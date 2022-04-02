@@ -15,14 +15,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const fs = require("fs");
-const favicons = require("favicons");
-const { config } = require("../../config");
-const path = require("path");
-const { logTitle, logOK, logError, logBg, logJob } = require("../utils/log");
-const { copySync, ensureDirSync } = require("fs-extra");
-const { JSDOM } = require("jsdom");
-const pretty = require("pretty");
+import favicons from "favicons";
+import { existsSync, readFileSync, writeFileSync } from "fs";
+import fse from "fs-extra";
+import { JSDOM } from "jsdom";
+import { join } from "path";
+import pretty from "pretty";
+import { config } from "../../config.js";
+import { logError, logJob, logOK, logTitle } from "../utils/log.js";
+
+const { copySync, ensureDirSync } = fse;
 
 async function makeTemplates() {
   logTitle("Generate Base Templates");
@@ -32,16 +34,16 @@ async function makeTemplates() {
   const templates = [
     {
       name: "landing_page.html",
-      path: path.join("src", "client", "landing_page.html"),
+      path: join("src", "client", "landing_page.html"),
     },
-    { name: "docs.html", path: path.join("src", "client", "docs.html") },
+    { name: "docs.html", path: join("src", "client", "docs.html") },
   ];
 
   /* Generates Favicons */
   const faviconsData = await makeFavicons();
 
   templates.forEach((template) => {
-    const content = fs.readFileSync(template.path, { encoding: "utf-8" });
+    const content = readFileSync(template.path, { encoding: "utf-8" });
     let dom = new JSDOM(content);
 
     /* Add Favicon paths to html */
@@ -50,20 +52,21 @@ async function makeTemplates() {
       faviconsData.html.join("")
     );
     const prettyHTML = pretty(dom.serialize());
-    fs.writeFileSync(path.join(".temp", template.name), prettyHTML);
+    writeFileSync(join(".temp", template.name), prettyHTML);
   });
 
   logOK(`Generated ${templates.length} templates.`);
 }
 
-module.exports.makeTemplates = makeTemplates;
+const _makeTemplates = makeTemplates;
+export { _makeTemplates as makeTemplates };
 
 /**
  *  Generates icons locally using pure Javascript with no external dependencies.
  * @returns object with 'files' 'images' 'html' arrays.
  */
 async function makeFavicons() {
-  const source = path.join(config.CONTENT_FOLDER, config.PROJECT_LOGO); // Source image(s). `string`, `buffer` or array of `string`
+  const source = join(config.CONTENT_FOLDER, config.PROJECT_LOGO); // Source image(s). `string`, `buffer` or array of `string`
   const configuration = {
     path: "/favicons", // Path for overriding default icons path. `string`
     appName: config.PROJECT_NAME, // Your application's name. `string`
@@ -106,32 +109,32 @@ async function makeFavicons() {
     },
   };
 
-  const cachePath = path.join(".cache", "favicons");
+  const cachePath = join(".cache", "favicons");
   const cacheImgPath = cachePath;
 
   //   const cacheImgPath = path.join(cachePath, "favicons");
-  const cacheHeadPath = path.join(cachePath, "faviconsData.json");
+  const cacheHeadPath = join(cachePath, "faviconsData.json");
   try {
     if (
-      !fs.existsSync(cachePath) ||
-      !fs.existsSync(".cache/favicons/manifest.json")
+      !existsSync(cachePath) ||
+      !existsSync(".cache/favicons/manifest.json")
     ) {
       logJob("Building favicons cache");
       let faviconsData = await favicons(source, configuration);
 
       ensureDirSync(cachePath);
-      ensureDirSync(path.join(cachePath, "favicons"));
+      ensureDirSync(join(cachePath, "favicons"));
 
       faviconsData.files.forEach((file) => {
-        fs.writeFileSync(path.join(cachePath, file.name), file.contents);
+        writeFileSync(join(cachePath, file.name), file.contents);
       });
 
       faviconsData.images.forEach((img) => {
-        fs.writeFileSync(path.join(cacheImgPath, img.name), img.contents);
+        writeFileSync(join(cacheImgPath, img.name), img.contents);
       });
 
       let safeFaviconsData = faviconsData;
-      safeFaviconsData = fs.writeFileSync(
+      safeFaviconsData = writeFileSync(
         cacheHeadPath,
         JSON.stringify(faviconsData),
         {
@@ -144,16 +147,16 @@ async function makeFavicons() {
     logError(error);
   }
 
-  ensureDirSync(path.join(config.BUILD_FOLDER, "favicons"));
+  ensureDirSync(join(config.BUILD_FOLDER, "favicons"));
 
   /* Copy the favicons cache to the build folder */
-  copySync(cachePath, path.join(config.BUILD_FOLDER, "favicons"), {
+  copySync(cachePath, join(config.BUILD_FOLDER, "favicons"), {
     recursive: true,
   });
 
   // Get the JSON data from cache to return it.
   const faviconsData = JSON.parse(
-    fs.readFileSync(cacheHeadPath, { encoding: "utf-8" })
+    readFileSync(cacheHeadPath, { encoding: "utf-8" })
   );
 
   logOK(`Favicons copied.`);

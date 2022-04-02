@@ -15,23 +15,24 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const path = require("path");
-const fse = require("fs-extra");
-const { logOK, logTitle, logStatus } = require("../utils/log.js");
-const { config } = require("../../config");
-const columnify = require("columnify");
+import { join } from "path";
+import fse from "fs-extra";
+import { logOK, logTitle, logStatus } from "../utils/log.js";
+import { config } from "../../config.js";
+import columnify from "columnify";
+const { lstatSync, ensureDirSync, copySync } = fse;
 
 /**
  * Copies media content into build folder
  */
-exports.copyMedia = () => {
+export function copyMedia() {
   logTitle("Copy media resources.");
   const { BUILD_FOLDER, CONTENT_FOLDER } = config;
-  const srcPath = path.join(CONTENT_FOLDER, "img");
-  const dstPath = path.join(BUILD_FOLDER, "img");
+  const srcPath = join(CONTENT_FOLDER, "img");
+  const dstPath = join(BUILD_FOLDER, "img");
   let filesCopied = [];
   const filterFunction = (src, dst) => {
-    if (fse.lstatSync(src).isFile()) {
+    if (lstatSync(src).isFile()) {
       const file = {
         source: src,
         destination: dst,
@@ -42,9 +43,9 @@ exports.copyMedia = () => {
   };
 
   //   console.log(columnify(new Array(filesCopied)));
-  fse.ensureDirSync(dstPath);
-  fse.copySync(srcPath, dstPath, { recursive: true, filter: filterFunction });
+  ensureDirSync(dstPath);
+  copySync(srcPath, dstPath, { recursive: true, filter: filterFunction });
   logStatus(columnify(filesCopied) + "\n");
 
   logOK(`${filesCopied.length} files copied`);
-};
+}

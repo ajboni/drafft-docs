@@ -15,19 +15,27 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const fs = require("fs");
-const { config } = require("../../config");
-const path = require("path");
-const Mustache = require("mustache");
-const { logTitle, logOK, logError, logBg } = require("../utils/log");
-const { getRandomInt } = require("../utils/math_utils");
-const trianglify = require("trianglify");
-const { ensureDirSync, pathExistsSync } = require("fs-extra");
-const { JSDOM } = require("jsdom");
+import {
+  readFileSync,
+  writeFileSync,
+  copyFileSync,
+  createWriteStream,
+} from "fs";
+import { config } from "../../config.js";
+import { join } from "path";
+import moustache from "mustache";
+import { logTitle, logOK, logError, logBg } from "../utils/log.js";
+import { getRandomInt } from "../utils/math_utils.js";
+import trianglify from "trianglify";
+import fse from "fs-extra";
+import { JSDOM } from "jsdom";
 
-const { processDocument } = require("./process_document");
-const { parseExtraFiles } = require("./parse_extra_files");
-const Jimp = require("jimp");
+import { processDocument } from "./process_document.js";
+import { parseExtraFiles } from "./parse_extra_files.js";
+import jimp from "jimp";
+const { read } = jimp;
+const { render } = moustache;
+const { ensureDirSync, pathExistsSync } = fse;
 
 async function makeLandingPages() {
   logTitle("Generate Landing Pages");
@@ -38,27 +46,27 @@ async function makeLandingPages() {
   const langs = config.LANGUAGES;
 
   langs.forEach((lang, index) => {
-    ensureDirSync(path.join(config.BUILD_FOLDER, lang.id));
-    let indexPath = path.join(config.CONTENT_FOLDER, lang.id, "index.md");
+    ensureDirSync(join(config.BUILD_FOLDER, lang.id));
+    let indexPath = join(config.CONTENT_FOLDER, lang.id, "index.md");
 
     /* Fallback for non existing languages */
     if (config.FALLBACK_TO_DEFAULT_LANGUAGE) {
       if (!pathExistsSync(indexPath)) {
-        indexPath = path.join(config.CONTENT_FOLDER, langs[0].id, "index.md");
+        indexPath = join(config.CONTENT_FOLDER, langs[0].id, "index.md");
       }
     }
 
-    let dstPath = path.join(config.BUILD_FOLDER, lang.id, "index.html");
+    let dstPath = join(config.BUILD_FOLDER, lang.id, "index.html");
 
     const document = processDocument(indexPath, lang, extraFiles, dstPath);
 
     /* Concatenate with generated template */
-    let template = fs.readFileSync(path.join(".temp", "landing_page.html"), {
+    let template = readFileSync(join(".temp", "landing_page.html"), {
       encoding: "utf-8",
     });
 
     /* Replace variables in template */
-    template = Mustache.render(template, config);
+    template = render(template, config);
 
     let dom = new JSDOM(template);
     const el = dom.window.document.getElementById("cover-content");
@@ -74,32 +82,31 @@ async function makeLandingPages() {
     const processedHTML = dom.serialize();
 
     /* Finally write the file */
-    fs.writeFileSync(dstPath, processedHTML, { encoding: "utf-8" });
+    writeFileSync(dstPath, processedHTML, { encoding: "utf-8" });
 
     /* Default language get special treatment */
     if (index === 0) {
       /* TODO: Process links and make it relative to the lang folder. */
 
-      fs.writeFileSync(
-        path.join(config.BUILD_FOLDER, "index.html"),
-        processedHTML,
-        { encoding: "utf-8" }
-      );
+      writeFileSync(join(config.BUILD_FOLDER, "index.html"), processedHTML, {
+        encoding: "utf-8",
+      });
     }
   });
 }
 
-module.exports.makeLandingPages = makeLandingPages;
+const _makeLandingPages = makeLandingPages;
+export { _makeLandingPages as makeLandingPages };
 
 /**
  * Generates a background from scratch using trianglify or gets the bg defined in settings.
  * In either case a bg.png file is created in build/img
  */
 function makeLandingPageBackground() {
-  let dstPath = path.join(config.BUILD_FOLDER, "img", "bg.jpg");
+  let dstPath = join(config.BUILD_FOLDER, "img", "bg.jpg");
   if (config.LANDING_PAGE_BG !== "auto") {
     try {
-      fs.copyFileSync(config.LANDING_PAGE_BG, dstPath);
+      copyFileSync(config.LANDING_PAGE_BG, dstPath);
       logOK(`Background copied: ${config.LANDING_PAGE_BG} => ${dstPath}`);
     } catch (error) {
       logError(error);
@@ -112,11 +119,11 @@ function makeLandingPageBackground() {
     }).toCanvas();
 
     try {
-      const file = fs.createWriteStream(".temp/bg.png");
+      const file = createWriteStream(".temp/bg.png");
       canvas.createPNGStream().pipe(file);
       file.on("close", () => {
         //   Compress background
-        Jimp.read(".temp/bg.png", function (err, image) {
+        read(".temp/bg.png", function (err, image) {
           if (err) {
             console.log(err);
           } else {

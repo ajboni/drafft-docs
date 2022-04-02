@@ -15,34 +15,34 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const path = require("path");
-const { readdirSync } = require("fs");
-const { replaceAll, titleCase } = require("voca");
-
-exports.removeFileExtension = function (str) {
+import { basename, extname, join, dirname } from "path";
+import { readdirSync } from "fs";
+import voca from "voca";
+const { replaceAll, titleCase } = voca;
+export function removeFileExtension(str) {
   return str.replace(/\.[^/.]+$/, "");
-};
+}
 
-exports.getFilenameFromPath = function (filepath, includeExtension = true) {
-  if (!includeExtension) return path.basename(filepath, path.extname(filepath));
-  else return path.basename(filepath);
-};
+export function getFilenameFromPath(filepath, includeExtension = true) {
+  if (!includeExtension) return basename(filepath, extname(filepath));
+  else return basename(filepath);
+}
 
-exports.changeFileExtension = function (filepath, newExtension) {
+export function changeFileExtension(filepath, newExtension) {
   if (newExtension !== "") {
     newExtension = `.${newExtension}`;
   }
-  return path.join(
-    path.dirname(filepath),
-    path.basename(filepath, path.extname(filepath)) + newExtension
+  return join(
+    dirname(filepath),
+    basename(filepath, extname(filepath)) + newExtension
   );
-};
+}
 
-exports.getFolders = function (source) {
+export function getFolders(source) {
   readdirSync(source, { withFileTypes: true })
     .filter((dirent) => dirent.isDirectory())
     .map((dirent) => dirent.name);
-};
+}
 
 /**
  * Strip __ prefix and anything before that (used for sorting purposes) and return the clean name
@@ -50,9 +50,9 @@ exports.getFolders = function (source) {
  * @param {string} str
  * @returns The string without the __prefix
  */
-exports.removeSortingPrefix = function (str) {
+export function removeSortingPrefix(str) {
   return replaceAll(str, /[^_\\\/]*__/, "");
-};
+}
 
 /**
  * Generates a "nice" caption from a filePath.
@@ -61,26 +61,24 @@ exports.removeSortingPrefix = function (str) {
  * @param {*} filePath
  * @returns
  */
-exports.captionFromPath = function (filePath) {
+export function captionFromPath(filePath) {
   return replaceAll(
-    titleCase(
-      exports.removeSortingPrefix(exports.getFilenameFromPath(filePath, false))
-    ),
+    titleCase(removeSortingPrefix(getFilenameFromPath(filePath, false))),
     /[-_]/,
     " "
   );
-};
+}
 
 /**
  *  Check if a string is a valid JSON string in JavaScript without
  * @param {string } str
  * @returns True/False if string is valid json
  */
-exports.isValidJSON = function (str) {
+export function isValidJSON(str) {
   try {
     JSON.parse(str);
   } catch (e) {
     return false;
   }
   return true;
-};
+}

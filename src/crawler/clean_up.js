@@ -15,11 +15,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const { logTitle, logStatus, logOK } = require("../utils/log");
-const path = require("path");
-const { PurgeCSS } = require("purgecss");
-const { config } = require("../../config");
-const { writeFileSync } = require("fs-extra");
+import { logTitle, logStatus, logOK } from "../utils/log.js";
+import path from "path";
+import { PurgeCSS } from "purgecss";
+import { config } from "../../config.js";
+import fse from "fs-extra";
+const { writeFileSync } = fse;
 
 async function cleanUp() {
   logTitle("Clean up");
@@ -42,4 +43,5 @@ async function cleanUp() {
   }
 }
 
-exports.cleanUp = cleanUp;
+const _cleanUp = cleanUp;
+export { _cleanUp as cleanUp };

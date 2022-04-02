@@ -15,25 +15,29 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const { JSDOM } = require("jsdom");
-const { logTitle, logOK } = require("../utils/log");
-const { readFileSync, writeFileSync, read } = require("fs");
-const { config } = require("../../config");
-const { glob } = require("glob");
-const path = require("path");
-const Mustache = require("mustache");
+import { JSDOM } from "jsdom";
+import { logTitle, logOK } from "../utils/log.js";
+import { config } from "../../config.js";
+import fse from "fs";
+import Glob from "glob";
+import { join, normalize } from "path";
+import moustache from "mustache";
 
-exports.makeSidebars = function () {
+const { readFileSync, writeFileSync, read } = fse;
+const { glob } = Glob;
+const { render } = moustache;
+
+export function makeSidebars() {
   logTitle("Generate Sidebars");
 
   const langs = config.LANGUAGES;
 
   langs.forEach((lang, index) => {
-    const docsFolder = path.join(config.BUILD_FOLDER, lang.id, "docs");
-    const jsonPath = path.join(".temp", lang.id, "sidebar.json");
-    const sidebarTemplate = path.join("src", "client", "sidebar.html");
-    const sidebarPartial = path.join("src", "client", "sidebar_item.html");
-    const docListPath = path.join(".temp", lang.id, "doc_list.json");
+    const docsFolder = join(config.BUILD_FOLDER, lang.id, "docs");
+    const jsonPath = join(".temp", lang.id, "sidebar.json");
+    const sidebarTemplate = join("src", "client", "sidebar.html");
+    const sidebarPartial = join("src", "client", "sidebar_item.html");
+    const docListPath = join(".temp", lang.id, "doc_list.json");
 
     const sidebar = JSON.parse(readFileSync(jsonPath, { encoding: "utf-8" }));
     const docList = JSON.parse(
@@ -52,7 +56,7 @@ exports.makeSidebars = function () {
       const el = dom.window.document.getElementById("sidebar-container");
 
       /* Get relative path and mark JSON item as expanded */
-      const relPath = page.replace(path.normalize(config.BUILD_FOLDER), "");
+      const relPath = page.replace(normalize(config.BUILD_FOLDER), "");
       const expandedSidebar = expandSidebarTo(
         JSON.parse(JSON.stringify(sidebar)),
         relPath
@@ -65,7 +69,7 @@ exports.makeSidebars = function () {
         ROOT: `/${lang.id}/docs`,
       };
 
-      const parsedSidebar = Mustache.render(template, view, {
+      const parsedSidebar = render(template, view, {
         item: partial,
       });
       el.innerHTML = parsedSidebar;
@@ -83,7 +87,7 @@ exports.makeSidebars = function () {
     });
     logOK(`Generated ${pages.length} sidebar entries for ${lang.caption}`);
   });
-};
+}
 
 /**
  * Traverse all objects until reaching the path setting an expanded property on the object.

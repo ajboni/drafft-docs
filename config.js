@@ -1,4 +1,4 @@
-exports.config = {
+export const config = {
   /* Project Name and logo on the navbar. */
   PROJECT_NAME: "Drafft",
   PROJECT_DESCRIPTION:

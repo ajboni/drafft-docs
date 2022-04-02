@@ -15,23 +15,25 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const { config } = require("../../config");
-const { readFileSync, outputFileSync } = require("fs-extra");
-const Fuse = require("fuse.js");
-const path = require("path");
+import { config } from "../../config.js";
+import fse from "fs-extra";
+import fuse from "fuse.js";
+import { join } from "path";
 
+const { readFileSync, outputFileSync } = fse;
+const { createIndex } = fuse;
 /**
  * Add javascript necesary to perform a seach on this document
  *
  * @param {document} Document to add search to.
  * @returns
  */
-exports.makeSearch = function () {
+export function makeSearch() {
   if (!config.ENABLE_SEARCH) return;
 
   config.LANGUAGES.forEach((lang) => {
     const docs = JSON.parse(
-      readFileSync(path.join(".temp", lang.id, "searchDB.json"), {
+      readFileSync(join(".temp", lang.id, "searchDB.json"), {
         encoding: "utf-8",
       })
     );
@@ -43,15 +45,15 @@ exports.makeSearch = function () {
         { name: "url", weight: 0.5 },
       ],
     };
-    const index = Fuse.createIndex(options.keys, docs);
+    const index = createIndex(options.keys, docs);
 
     outputFileSync(
-      path.join(config.BUILD_FOLDER, lang.id, "searchIndex.json"),
+      join(config.BUILD_FOLDER, lang.id, "searchIndex.json"),
       JSON.stringify(index.toJSON())
     );
     outputFileSync(
-      path.join(config.BUILD_FOLDER, lang.id, "searchDatabase.json"),
+      join(config.BUILD_FOLDER, lang.id, "searchDatabase.json"),
       JSON.stringify(docs)
     );
   });
-};
+}

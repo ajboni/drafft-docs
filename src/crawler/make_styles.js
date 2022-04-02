@@ -15,31 +15,33 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var sass = require("node-sass");
-const { config } = require("../../config");
-const path = require("path");
-const { logError, logOK, logTitle } = require("../utils/log");
-const { writeFileSync } = require("fs");
-var glob = require("glob");
-const { getFilenameFromPath } = require("../utils/string_utils");
+import fse from "fs";
+import Glob from "glob";
+import { renderSync } from "node-sass";
+import { join } from "path";
+import { config } from "../../config.js";
+import { logError, logOK, logTitle } from "../utils/log.js";
+import { getFilenameFromPath } from "../utils/string_utils.js";
 
-exports.makeStyles = function () {
+const { writeFileSync } = fse;
+const { sync } = Glob;
+export function makeStyles() {
   logTitle("Generating Styles");
 
   //   const srcPath = path.join("src", "client", "style.scss");
   //   const dstPath = path.join(config.BUILD_FOLDER, "css", "style.css");
 
   // options is optional
-  const files = glob.sync("src/client/**/*.scss");
+  const files = sync("src/client/**/*.scss");
   try {
     files.forEach((srcPath) => {
       if (getFilenameFromPath(srcPath, false).startsWith("_")) return;
-      const dstPath = path.join(
+      const dstPath = join(
         config.BUILD_FOLDER,
         "css",
         `${getFilenameFromPath(srcPath, false)}.css`
       );
-      const result = sass.renderSync({
+      const result = renderSync({
         file: srcPath,
         outputStyle: "compressed",
       });
@@ -49,4 +51,4 @@ exports.makeStyles = function () {
   } catch (error) {
     logError(error);
   }
-};
+}

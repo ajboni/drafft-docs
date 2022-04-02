@@ -15,13 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const { crawl } = require("./src/crawler/crawl");
-const chokidar = require("chokidar");
-const { copyMedia } = require("./src/crawler/copy_media");
-const { config } = require("./config");
-const { makeStyles } = require("./src/crawler/make_styles");
-const path = require("path");
-const { copyTemplatesJavascript } = require("./src/crawler/init_build_folder");
+import { crawl } from "./src/crawler/crawl.js";
+import { watch } from "chokidar";
+import { copyMedia } from "./src/crawler/copy_media.js";
+import { config } from "./config.js";
+import { makeStyles } from "./src/crawler/make_styles.js";
+import { join, extname } from "path";
+import { copyTemplatesJavascript } from "./src/crawler/init_build_folder.js";
 /* Set up dev live-reload */
 crawl();
 setUpLiveReload();
@@ -45,25 +45,24 @@ function setUpLiveReload() {
     //   .watch(path.join("src", "client", "scss"), { ignoreInitial: true })
     //   .on("all", (event, path) => {});
 
-    chokidar
-      .watch("./config.js", { ignoreInitial: true })
-      .on("all", (event, path) => {
-        crawl();
-        console.log(event, path);
-      });
+    watch("./config.js", { ignoreInitial: true }).on("all", (event, path) => {
+      crawl();
+      console.log(event, path);
+    });
 
-    chokidar
-      .watch(config.CONTENT_FOLDER, { ignoreInitial: true })
-      .on("all", (event, path) => {
+    watch(config.CONTENT_FOLDER, { ignoreInitial: true }).on(
+      "all",
+      (event, path) => {
         console.log(event, path);
         crawl();
-      });
+      }
+    );
 
     /* Watch client files */
-    chokidar
-      .watch(path.join("src", "client"), { ignoreInitial: true })
-      .on("all", (event, _path, details) => {
-        switch (path.extname(_path)) {
+    watch(join("src", "client"), { ignoreInitial: true }).on(
+      "all",
+      (event, _path, details) => {
+        switch (extname(_path)) {
           case ".js":
             copyTemplatesJavascript();
             break;
@@ -73,6 +72,7 @@ function setUpLiveReload() {
           default:
             break;
         }
-      });
+      }
+    );
   }
 }

@@ -15,27 +15,29 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const chalk = require("chalk");
+import chalk from "chalk";
 
-exports.logStatus = (msg) => {
-  console.log(chalk.gray`${msg}`);
-};
-exports.logOK = (msg) => {
-  console.log(chalk.green`[OK] ${msg}`);
-};
-exports.logError = (msg) => {
-  console.trace(chalk.red`[ERROR] ${msg}`);
-};
+const { gray, green, red, yellow, bold } = chalk;
 
-exports.logBg = (msg) => {
-  console.log(chalk.hex("#f29312")`[BACKGROUND] ${msg}`);
-};
+export function logStatus(msg) {
+  console.log(gray`${msg}`);
+}
+export function logOK(msg) {
+  console.log(green`[OK] ${msg}`);
+}
+export function logError(msg) {
+  console.trace(red`[ERROR] ${msg}`);
+}
 
-exports.logJob = (msg) => {
-  console.log(chalk.hex("#f29312")`[...] ${msg}`);
-};
+export function logBg(msg) {
+  console.log(hex("#f29312")`[BACKGROUND] ${msg}`);
+}
 
-exports.logWarning = (msg) => {};
-exports.logTitle = (msg) => {
-  console.log(chalk.bold.whiteBright`\n-------- ${msg} -------- \n`);
-};
+export function logJob(msg) {
+  console.log(hex("#f29312")`[...] ${msg}`);
+}
+
+export function logWarning(msg) {}
+export function logTitle(msg) {
+  console.log(bold.whiteBright`\n-------- ${msg} -------- \n`);
+}

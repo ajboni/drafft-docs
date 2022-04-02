@@ -22,7 +22,7 @@
  * @param {Date} end
  * @returns The difference in seconds between start and end dates.
  */
-exports.timeElpasedInSeconds = function (start, end) {
+export function timeElpasedInSeconds(start, end) {
   var timeDiff = end - start; //in ms
   // strip the ms
   timeDiff /= 1000;
@@ -30,4 +30,4 @@ exports.timeElpasedInSeconds = function (start, end) {
   // get seconds
   const seconds = timeDiff;
   return seconds;
-};
+}

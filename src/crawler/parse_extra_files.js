@@ -15,28 +15,38 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const { config } = require("../../config");
-var minimatch = require("minimatch");
-const { readFileSync } = require("fs-extra");
-const matter = require("gray-matter");
-const path = require("path");
-var md = require("markdown-it")({
+import { config } from "../../config.js";
+import minimatch from "minimatch";
+import fse from "fs-extra";
+import matter from "gray-matter";
+import path from "path";
+
+const { readFileSync } = fse;
+const { match } = minimatch;
+
+import markdownIt from "markdown-it";
+import markdownItImsize from "markdown-it-imsize";
+import markdownItTaskLists from "markdown-it-task-lists";
+import markdownitEmoji from "markdown-it-emoji";
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItExternalLinks from "markdown-it-external-links";
+
+var md = markdownIt({
   html: true,
   linkify: true,
   //   typography: true,
 })
-  .use(require("markdown-it-imsize"), { autofill: true })
-  .use(require("markdown-it-imsize"), { autofill: true })
-  .use(require("markdown-it-anchor"), {
+  .use(markdownItImsize, { autofill: true })
+  .use(markdownItAnchor, {
     permalink: true,
     permalinkBefore: true,
   })
-  .use(require("markdown-it-external-links"), {
+  .use(markdownItExternalLinks, {
     externalClassName: null,
     externalRel: "noopener noreferrer",
     externalTarget: "_blank",
   })
-  .use(require("markdown-it-task-lists"), {
+  .use(markdownItTaskLists, {
     label: true,
   });
 
@@ -46,14 +56,14 @@ var md = require("markdown-it")({
  * Extra files are defined in config
  * @returns an object with all special files and its contents
  */
-exports.parseExtraFiles = function () {
+export function parseExtraFiles() {
   let obj = {};
   let specialFiles = config.EXTRA_FILES_AS_VARIABLES;
-  const files = minimatch.match(specialFiles, "*", { nocase: true });
+  const files = match(specialFiles, "*", { nocase: true });
   files.forEach((file) => {
     let contents = readFileSync(file, { encoding: "utf-8" });
 
     obj[file.toString().replace(".", "_")] = contents;
   });
   return obj;
-};
+}

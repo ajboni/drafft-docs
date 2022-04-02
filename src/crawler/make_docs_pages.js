@@ -15,31 +15,41 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const fs = require("fs-extra");
-const { config } = require("../../config");
-const path = require("path");
-const Mustache = require("mustache");
-const { logTitle, logOK, logError, logBg } = require("../utils/log");
+import fse from "fs-extra";
+import { config } from "../../config.js";
+import { join, normalize, relative, extname, dirname as _dirname } from "path";
+import mustache from "mustache";
+import { logTitle, logOK, logError, logBg } from "../utils/log.js";
+
+import { JSDOM } from "jsdom";
+
+import { processDocument } from "./process_document.js";
+import Glob from "glob";
+import {
+  changeFileExtension,
+  removeSortingPrefix,
+  isValidJSON,
+} from "../utils/string_utils.js";
+import { parseExtraFiles } from "./parse_extra_files.js";
+import { basename, dirname } from "path";
+import voca from "voca";
+// import { version } from "../../package.json" assert { type: "json" };
+import { resolve } from "url";
+
+const { titleCase, replaceAll } = voca;
 const {
+  readJSONSync,
+  statSync,
   ensureDirSync,
   ensureFileSync,
   existsSync,
   readFileSync,
-} = require("fs-extra");
-const { JSDOM } = require("jsdom");
+  writeFileSync,
+  outputFileSync,
+} = fse;
 
-const { processDocument } = require("./process_document");
-const { glob } = require("glob");
-const {
-  changeFileExtension,
-  removeSortingPrefix,
-  isValidJSON,
-} = require("../utils/string_utils");
-const { parseExtraFiles } = require("./parse_extra_files");
-const { basename, dirname } = require("path");
-const { titleCase, replaceAll } = require("voca");
-var pjson = require("../../package.json");
-const url = require("url");
+const { glob } = Glob;
+const { render } = mustache;
 
 async function makeDocPages() {
   logTitle("Generate Doc Pages");
@@ -48,13 +58,9 @@ async function makeDocPages() {
 
   langs.forEach((lang, index) => {
     /* Load NavBar JSON*/
-    const navbarJsonPath = path.join(
-      config.CONTENT_FOLDER,
-      lang.id,
-      "navbar.json"
-    );
+    const navbarJsonPath = join(config.CONTENT_FOLDER, lang.id, "navbar.json");
 
-    const navBarButtons = fs.readJSONSync(navbarJsonPath, {
+    const navBarButtons = readJSONSync(navbarJsonPath, {
       encoding: "utf-8",
       throws: false,
     });
@@ -64,7 +70,7 @@ async function makeDocPages() {
     let searchDatabase = [];
     let docList = [];
 
-    const sidebarTemplatePath = path.join(
+    const sidebarTemplatePath = join(
       config.CONTENT_FOLDER,
       lang.id,
       "sidebar.json"
@@ -78,8 +84,8 @@ async function makeDocPages() {
       }
     }
 
-    ensureDirSync(path.join(config.BUILD_FOLDER, lang.id, "docs"));
-    const docsFolder = path.join(config.CONTENT_FOLDER, lang.id, "docs");
+    ensureDirSync(join(config.BUILD_FOLDER, lang.id, "docs"));
+    const docsFolder = join(config.CONTENT_FOLDER, lang.id, "docs");
 
     /*   Allow only markdown and folders */
     const docsGlob = `${docsFolder}/**/*{/,.md}`;
@@ -92,20 +98,18 @@ async function makeDocPages() {
     files.sort();
 
     files.forEach((file, fileIndex) => {
-      const type = fs.statSync(file).isFile()
+      const type = statSync(file).isFile()
         ? "File"
-        : fs.statSync(file).isDirectory
+        : statSync(file).isDirectory
         ? "Folder"
         : "Unknown";
 
       /* Create Target Path */
-      let targetPath = path
-        .normalize(file)
-        .replace(
-          path.normalize(config.CONTENT_FOLDER),
-          path.normalize(config.BUILD_FOLDER)
-        );
-      targetPath = fs.statSync(file).isFile()
+      let targetPath = normalize(file).replace(
+        normalize(config.CONTENT_FOLDER),
+        normalize(config.BUILD_FOLDER)
+      );
+      targetPath = statSync(file).isFile()
         ? changeFileExtension(targetPath, "html")
         : targetPath;
       targetPath = removeSortingPrefix(targetPath);
@@ -122,7 +126,7 @@ async function makeDocPages() {
       ensureFileSync(targetPath);
 
       /* Load html template */
-      let template = fs.readFileSync(path.join(".temp", "docs.html"), {
+      let template = readFileSync(join(".temp", "docs.html"), {
         encoding: "utf-8",
       });
 
@@ -131,8 +135,8 @@ async function makeDocPages() {
 
       /* Replace variables in template */
 
-      const variables = { ...config, ...document.data, VERSION: pjson.version };
-      template = Mustache.render(template, variables);
+      const variables = { ...config, ...document.data, VERSION: 1 };
+      template = render(template, variables);
 
       let dom = new JSDOM(template);
       const el = dom.window.document.getElementById("docs-content-container");
@@ -141,28 +145,26 @@ async function makeDocPages() {
 
       /* Load and process Navbar template */
       let navBarTemplate = loadAndProcessTemplate(
-        path.join("src", "client", "navbar.html"),
+        join("src", "client", "navbar.html"),
         { ...variables, buttons: navBarButtons }
       );
-      const navbarElement = dom.window.document.getElementById(
-        "navbar-container"
-      );
+      const navbarElement =
+        dom.window.document.getElementById("navbar-container");
       navbarElement.innerHTML = navBarTemplate;
 
       /* Load and process Footer template */
       let footerTemplate = loadAndProcessTemplate(
-        path.join("src", "client", "footer.html"),
+        join("src", "client", "footer.html"),
         { ...variables }
       );
 
-      const footerElement = dom.window.document.getElementById(
-        "footer-container"
-      );
+      const footerElement =
+        dom.window.document.getElementById("footer-container");
       footerElement.innerHTML = footerTemplate;
 
       /* Load and process TOC template */
       let tocTemplate = loadAndProcessTemplate(
-        path.join("src", "client", "table_of_contents.html"),
+        join("src", "client", "table_of_contents.html"),
         { ...variables }
       );
 
@@ -198,7 +200,7 @@ async function makeDocPages() {
       if (!document.external) {
         if (
           document.buildPath ===
-          path.join(config.BUILD_FOLDER, lang.id, "docs", "index.html")
+          join(config.BUILD_FOLDER, lang.id, "docs", "index.html")
         ) {
           docList.unshift(document);
         } else {
@@ -207,27 +209,27 @@ async function makeDocPages() {
       }
 
       /* Finally write the file */
-      fs.writeFileSync(targetPath, processedHTML, { encoding: "utf-8" });
+      writeFileSync(targetPath, processedHTML, { encoding: "utf-8" });
     });
 
     /* Write sidebar to target folder */
-    fs.outputFileSync(
-      path.join(".temp", lang.id, "sidebar.json"),
+    outputFileSync(
+      join(".temp", lang.id, "sidebar.json"),
       JSON.stringify(sidebar),
       { encoding: "utf-8" }
     );
 
     /*  Write hashmap to target folder */
-    fs.outputFileSync(
-      path.join(".temp", lang.id, "doc_list.json"),
+    outputFileSync(
+      join(".temp", lang.id, "doc_list.json"),
       JSON.stringify(docList),
       { encoding: "utf-8" }
     );
 
     /* Write search database to temp folder */
     if (config.ENABLE_SEARCH) {
-      fs.outputFileSync(
-        path.join(".temp", lang.id, "searchDB.json"),
+      outputFileSync(
+        join(".temp", lang.id, "searchDB.json"),
         JSON.stringify(searchDatabase),
         { encoding: "utf-8" }
       );
@@ -237,21 +239,22 @@ async function makeDocPages() {
     logOK(`Generated ${files.length} doc pages for ${lang.caption}`);
   });
 }
-module.exports.makeDocPages = makeDocPages;
+const _makeDocPages = makeDocPages;
+export { _makeDocPages as makeDocPages };
 
 function addFolderToSidebar(targetPath, sidebar, lang) {
   if (!config.AUTO_GENERATE_SIDEBAR) return;
 
   let url = config.REMOVE_EXTENSION_FROM_LINKS
-    ? changeFileExtension(path.relative(config.BUILD_FOLDER, targetPath), "")
-    : path.relative(config.BUILD_FOLDER, targetPath);
+    ? changeFileExtension(relative(config.BUILD_FOLDER, targetPath), "")
+    : relative(config.BUILD_FOLDER, targetPath);
 
-  const name = basename(url, path.extname(url));
+  const name = basename(url, extname(url));
   const caption = replaceAll(titleCase(name), /[-_]/, " ");
 
   /* Make pseudo absolute */
   url = "/" + url;
-  let parent = path.dirname(url);
+  let parent = _dirname(url);
 
   const obj = {
     name,
@@ -272,8 +275,7 @@ function addFolderToSidebar(targetPath, sidebar, lang) {
   } else {
     if (
       /* Index will be ommited in sidebar and accessed by the icon */
-      targetPath !==
-      path.join(config.BUILD_FOLDER, lang.id, "docs", "index.html")
+      targetPath !== join(config.BUILD_FOLDER, lang.id, "docs", "index.html")
     ) {
       sidebar.push(obj);
     }
@@ -284,7 +286,7 @@ function addDocumentToSidebar(document, sidebar) {
   if (!config.AUTO_GENERATE_SIDEBAR) return;
 
   /* Make pseudo absolute */
-  let parent = path.dirname(document.url);
+  let parent = _dirname(document.url);
 
   const obj = {
     name: document.name,
@@ -307,7 +309,7 @@ function addDocumentToSidebar(document, sidebar) {
     if (
       /* Index will be ommited in sidebar and accessed by the icon */
       document.buildPath !==
-      path.join(config.BUILD_FOLDER, document.lang.id, "docs", "index.html")
+      join(config.BUILD_FOLDER, document.lang.id, "docs", "index.html")
     ) {
       sidebar.push(obj);
     }
@@ -340,17 +342,17 @@ function addDocumentToSearchDatabase(document, db) {
 }
 
 function loadAndProcessTemplate(srcPath, variables) {
-  let template = fs.readFileSync(srcPath, {
+  let template = readFileSync(srcPath, {
     encoding: "utf-8",
   });
-  template = Mustache.render(template, variables);
+  template = render(template, variables);
 
   return template;
 }
 
 function generateMetaTags(title, description, img, docUrl) {
   let html = "";
-  const imgPath = img ? url.resolve(config.PROJECT_URL, img) : "";
+  const imgPath = img ? resolve(config.PROJECT_URL, img) : "";
 
   html += `
 <!-- Google / Search Engine Tags -->
@@ -363,7 +365,7 @@ function generateMetaTags(title, description, img, docUrl) {
   }
 
   if (config.PROJECT_URL) {
-    const targetUrl = url.resolve(config.PROJECT_URL, docUrl);
+    const targetUrl = resolve(config.PROJECT_URL, docUrl);
     html += `
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">

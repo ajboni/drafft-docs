@@ -15,22 +15,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const path = require("path");
-const { config } = require("../../config");
-const { writeFileSync } = require("fs-extra");
-const { copyMedia } = require("./copy_media");
-const { makeLandingPages } = require("./make_landing_pages");
-const { logTitle } = require("../utils/log");
-const { timeElpasedInSeconds } = require("../utils/date_utils");
-const { makeStyles } = require("./make_styles");
-const { initBuildFolder } = require("./init_build_folder");
-const { makeTemplates } = require("./make_templates");
-const { makeDocPages } = require("./make_docs_pages");
-const { makeSidebars } = require("./make_sidebar");
-const { cleanUp } = require("./clean_up");
-const { makeSearch } = require("./make_search");
+import fse from "fs-extra";
+import { join } from "path";
+import { config } from "../../config.js";
+import { timeElpasedInSeconds } from "../utils/date_utils.js";
+import { logTitle } from "../utils/log.js";
+import { cleanUp } from "./clean_up.js";
+import { copyMedia } from "./copy_media.js";
+import { initBuildFolder } from "./init_build_folder.js";
+import { makeDocPages } from "./make_docs_pages.js";
+import { makeLandingPages } from "./make_landing_pages.js";
+import { makeSearch } from "./make_search.js";
+import { makeSidebars } from "./make_sidebar.js";
+import { makeStyles } from "./make_styles.js";
+import { makeTemplates } from "./make_templates.js";
 const { BUILD_FOLDER } = config;
 
+const { writeFileSync } = fse;
 async function crawl() {
   const startTime = new Date();
 
@@ -64,10 +65,8 @@ async function crawl() {
   /* Build Completed */
   const elapsed = timeElpasedInSeconds(startTime, new Date());
   logTitle(`Building Done in ${elapsed} seconds.`);
-  writeFileSync(
-    path.join(BUILD_FOLDER, ".build.log"),
-    new Date().toISOString()
-  );
+  writeFileSync(join(BUILD_FOLDER, ".build.log"), new Date().toISOString());
 }
 
-module.exports.crawl = crawl;
+const _crawl = crawl;
+export { _crawl as crawl };
