@@ -4,7 +4,7 @@
   "description": "A spicy, zero-config static documentation site generator.",
   "main": "index.js",
   "scripts": {
-    "dev": "clear && rm -rf ./build && NODE_ENV=development concurrently --names \"build,webserver\" \"npm:build\" \"wait-on ./build/.build.log && npx live-server --no-browser ./build\"",
+    "dev": "clear && rm -rf ./build && NODE_ENV=development concurrently --names \"build,webserver\" \"npm:build\" \"wait-on ./build/.build.log && npx http-server  --no-browser ./build\"",
     "build": "node build.js"
   },
   "type": "module",
@@ -34,7 +34,6 @@
     "html-to-text": "^8.1.0",
     "jimp": "^0.16.1",
     "jsdom": "^19.0.0",
-    "live-server": "1.2.1",
     "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^8.4.1",
     "markdown-it-emoji": "^2.0.0",
