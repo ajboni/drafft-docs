@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misc object editor · Drafft</title>
+    <title>Quick Start · Drafft</title>
 
-    <meta name="description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+    <meta name="description" content="Getting familiar with the app with some sample projects.">
     <link rel="stylesheet" href="/css/docs.css">
     <link rel="preload" href="/css/flags-css/flag-icon.min.css" as="style">
     <link rel="preload" href="/js/fuse/fuse.min.js" as="script">
@@ -54,20 +54,20 @@
     <link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2160x1620.png">
   
 <!-- Google / Search Engine Tags -->
-<meta itemprop="name" content="Misc object editor · Drafft">
-<meta itemprop="description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+<meta itemprop="name" content="Quick Start · Drafft">
+<meta itemprop="description" content="Getting familiar with the app with some sample projects.">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://drafft.aboni.dev/en/docs/features/misc_database.html">
-<meta property="og:title" content="Misc object editor · Drafft">
-<meta property="og:description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+<meta property="og:url" content="https://drafft.aboni.dev/en/docs/documentation/quick_start.html">
+<meta property="og:title" content="Quick Start · Drafft">
+<meta property="og:description" content="Getting familiar with the app with some sample projects.">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://drafft.aboni.dev/en/docs/features/misc_database.html">
-<meta property="twitter:title" content="Misc object editor · Drafft">
-<meta property="twitter:description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+<meta property="twitter:url" content="https://drafft.aboni.dev/en/docs/documentation/quick_start.html">
+<meta property="twitter:title" content="Quick Start · Drafft">
+<meta property="twitter:description" content="Getting familiar with the app with some sample projects.">
 </head>
 
 
@@ -125,7 +125,7 @@
 <!--  -->
 <div class="accordion-container">
   <div class="accordion">
-    <input id="accordion-features" type="checkbox" name="docs-accordion-features" hidden="" checked="">
+    <input id="accordion-features" type="checkbox" name="docs-accordion-features" hidden="">
     <label class="accordion-header c-hand" for="accordion-features">
       <i class="icon icon-arrow-right"></i>
 
@@ -165,7 +165,7 @@
 <!--  -->
 <li class="menu-item">
   <a href="/en/docs/features/misc_database.html">
-    <strong> Misc Database  </strong></a>
+     Misc Database </a>
 </li>
 <!--  -->
 <li class="menu-item">
@@ -200,7 +200,7 @@
 <!--  -->
 <div class="accordion-container">
   <div class="accordion">
-    <input id="accordion-documentation" type="checkbox" name="docs-accordion-documentation" hidden="">
+    <input id="accordion-documentation" type="checkbox" name="docs-accordion-documentation" hidden="" checked="">
     <label class="accordion-header c-hand" for="accordion-documentation">
       <i class="icon icon-arrow-right"></i>
 
@@ -210,7 +210,7 @@
       <ul class="menu menu-nav">
 <li class="menu-item">
   <a href="/en/docs/documentation/quick_start.html">
-     Quick Start </a>
+    <strong> Quick Start  </strong></a>
 </li>
 <!--  -->
 <li class="menu-item">
@@ -242,14 +242,61 @@
       <a class="off-canvas-overlay" href="#close"></a>
 
       <div class="docs-wrapper">
-        <article class="docs-content" id="docs-content-container"><h1 id="misc-objects" tabindex="-1">MISC OBJECTS <a class="header-anchor" href="#misc-objects">¶</a></h1>
-<p>Misc objects can also added and exported to the engine, this is good for main menus, default options, etc.</p>
-<p><img src="/img/misc-01.png" alt="misc items"></p>
+        <article class="docs-content" id="docs-content-container"><h1 id="quick-start" tabindex="-1">Quick Start <a class="header-anchor" href="#quick-start">¶</a></h1>
+<p>A good way to start experimenting with the app is to load a sample project and play around.<br>
+Currently there are two very basic projects:</p>
+<ol>
+<li><a href="https://github.com/ajboni/drafft-examples/blob/main/projects/The%20goddess%20of%20fate..json">The goddess of fate</a>: A Dialogue based visual novel about the zodiac.</li>
+<li><a href="https://github.com/ajboni/drafft-examples/blob/main/projects/One%20Bullet.json">One Bullet</a>: A Mockup for a point and click game about a heist. Work in progress.</li>
+</ol>
+<blockquote>
+<p>If you want to contribute your project to this section, please make a pull request on the <a href="https://github.com/ajboni/drafft-examples">examples repo</a></p>
+</blockquote>
+<h1 id="importing-a-project." tabindex="-1">Importing a project. <a class="header-anchor" href="#importing-a-project.">¶</a></h1>
+<ol>
+<li>Download the example project json file: for this document we will use <a href="https://github.com/ajboni/drafft-examples/blob/main/projects/The%20goddess%20of%20fate..json">The goddess of fate</a>: A Dialogue based visual novel about the zodiac.</li>
+<li>Launch the app.</li>
+<li>Go to <strong>Project Manager</strong> and click on <strong>Restore Database from file in a new project</strong></li>
+<li>Enter a name and click ok.</li>
+<li>Select the json file. The project will load.</li>
+</ol>
+<h1 id="sections" tabindex="-1">Sections <a class="header-anchor" href="#sections">¶</a></h1>
+<p>The left sidebar content will change with all available modules of the app, we will quickly visit each one to get a general overview of the features.</p>
+<h2 id="options" tabindex="-1">Options <a class="header-anchor" href="#options">¶</a></h2>
+<p>You should setup your username here if you are planning to use it in a team. Other options are self explanatory.</p>
+<h2 id="project-manager" tabindex="-1">Project Manager <a class="header-anchor" href="#project-manager">¶</a></h2>
+<p>This is where you can create, load, delete and restore projects. Not much to do here now.</p>
+<h2 id="project-settings" tabindex="-1">Project Settings <a class="header-anchor" href="#project-settings">¶</a></h2>
+<p>This is where you can set up project options and metadata and certain default behaviours.<br>
+A very important section here is the <strong>Export Options</strong> page where you can set up different mappings that will be applied when generating the game export as well as what sections will be exported.</p>
+<h2 id="design-documents" tabindex="-1">Design Documents <a class="header-anchor" href="#design-documents">¶</a></h2>
+<p>Here is the place where to add documents, notes, story bits, etc.
+You will notice the loaded project has a “summary” document, if you try to edit it you will not be able to do so. That’s because the document is not “locked for editing”.</p>
+<h2 id="editing-documents" tabindex="-1">Editing documents <a class="header-anchor" href="#editing-documents">¶</a></h2>
+<p>Drafft supports realtime collaboration, with the condition that each user “locks” the document that they are working on to avoid concurrency issues.<br>
+Even when using the app as a single user, each document will need to be locked before it being able to be modified.</p>
+<p>Go ahead and click the edit button on the toolbar. Some actions on the toolbar like delete or rename will be available now. Also notice that there should be a padlock icon with your username simbolizing the status of the document.</p>
+<blockquote>
+<p>You can double-click on the doc text to unlock the document (works also on scripts).</p>
+</blockquote>
+<p>Make some changes to the file and click the save button. The file icon should disappear and the file will be available to other user.</p>
+<p>You can have a play exploring the file creation or editing processes, also take a look at the timeline feature if you want. Once ready lets move to the script section.</p>
+<h2 id="scripts" tabindex="-1">Scripts <a class="header-anchor" href="#scripts">¶</a></h2>
+<p>This is one of the main sections of the app, a script is data that you will provide to your game and it can be written in any language.<br>
+A script could be a standalone document or be part of a dialogue tree. Instead of relying on writing int each dialogue tree node, each node will have its own script attached, but more on that later.<br>
+You will notice two items in the file tree: <code>goToLibrary</code> is a really simple script executing a <strong>command</strong> and a special read-only “Dialogues” folder which contains all scripts that are part of a dialogue Documents, lets ignore that for now.</p>
+<ul>
+<li>Select <code>goToLibrary</code> and double-click on the text area. Press the <code>Toggle editor hotkeys panel</code> button. This will open a sidebar on the right with some shortcuts, these will be really useful for repetitive tasks like adding speech actions.</li>
+<li>Modify <code>ctrl+4</code> shortcut and add the following: <code>::Narrator:: % deals % damage.</code></li>
+<li>Focus the text area and press <code>ctrl+4</code>. Each time a <code>%</code> appears in the shortcut it will ask the user for a value. Put <code>Max</code> and <code>66</code> or whatever you want there.</li>
+</ul>
+<p>You will also notice that <code>&lt;PlayDialogueByAlias(area)&gt;</code> and <code>::Narrator::</code> are highlighted differently and that is because they are part of the really small <a href="scripting.html">Drafft Scripting Syntax</a>. Go have a read on that page document for a quick overview. I’ll wait…</p>
+<p>TO BE CONTINUED…</p>
 
           <!-- Docs content HERE (id='docs-content-container') -->
           <nav id="next-prev-container" class="next-prev-container">
             <!-- Next Previous buttons here -->
-          <div class="prevBtn"><a class="btn-link btn-action" href="/en/docs/features/grids_database.html" aria-label="Previous document"> <i class="icon icon-back"> </i> Previous: Grids Database</a></div><div class="nextBtn"><a class="btn-link btn-action" href="/en/docs/features/kanban_boards.html" aria-label="Previous document">Next: Kanban Boards <i class="icon icon-forward"></i></a></div></nav>
+          <div class="prevBtn"><a class="btn-link btn-action" href="/en/docs/features/development.html" aria-label="Previous document"> <i class="icon icon-back"> </i> Previous: Development</a></div><div class="nextBtn"><a class="btn-link btn-action" href="/en/docs/documentation/scripting.html" aria-label="Previous document">Next: Drafft Scripting Syntax <i class="icon icon-forward"></i></a></div></nav>
           <!-- Footer -->
           <footer class="docs-footer" id="footer-container"><p>
   Powered by
