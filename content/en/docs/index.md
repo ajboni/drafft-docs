@@ -16,7 +16,6 @@ The project aims to solve file clutter while providing a centralized environment
 <iframe src="https://itch.io/embed/850148?bg_color=1d1f22&amp;fg_color=c5c8c6&amp;link_color=7c5875&amp;border_color=505357" width="552" height="167" frameborder="0"><a href="https://baj.itch.io/drafft">drafft by baj</a></iframe>
 </div>
 
-
 ### Features
 
 - GDDs, Scripts, Dialogue Trees and Generic Database Editor and exporter.
@@ -26,7 +25,7 @@ The project aims to solve file clutter while providing a centralized environment
 - Nice UI: Because staring at a screen while building the next big hit should be a pleasant experience.
 - Engine Agnostic: Standard JSON export for any usage.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XYneuHPRbhg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="615" src="https://www.youtube.com/embed/XYneuHPRbhg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### How do I authorize Drafft?
 

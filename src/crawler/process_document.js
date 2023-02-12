@@ -25,7 +25,7 @@ import { JSDOM } from "jsdom";
 import twemoji from "twemoji";
 import voca from "voca";
 import hjs from "highlight.js";
-import { fromString } from "html-to-text";
+import { convert, htmlToText } from "html-to-text";
 import { basename } from "path";
 import markdownIt from "markdown-it";
 import markdownItImsize from "markdown-it-imsize";
@@ -179,7 +179,7 @@ export function processDocument(filePath, lang, extraFiles = {}, targetPath) {
 
   /* Process HTML to replace variables */
   document.html = render(document.html, document.data);
-  document.plainTextContent = fromString(document.html, {
+  document.plainTextContent = convert(document.html, {
     format: {
       anchor: function (el, fn, options) {
         return "";
