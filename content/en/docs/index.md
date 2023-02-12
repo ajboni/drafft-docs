@@ -26,6 +26,7 @@ The project aims to solve file clutter while providing a centralized environment
 - Nice UI: Because staring at a screen while building the next big hit should be a pleasant experience.
 - Engine Agnostic: Standard JSON export for any usage.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XYneuHPRbhg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### How do I authorize Drafft?
 
