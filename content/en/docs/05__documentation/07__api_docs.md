@@ -30,6 +30,7 @@ Accepted Values: `ProjectSettings` `GDD` `Scripts` `Actors` `Quests` `Items` `Mi
 GET /game-export?collections=Scripts,Items,Actors
 ```
 
+![](/img/api-game-export.png)
 ### Get Database Dump
 
 Gets a database dump directly from the PouchDB instance. It accepts any [PouchDB allDocs options](https://pouchdb.com/api.html#batch_fetch).

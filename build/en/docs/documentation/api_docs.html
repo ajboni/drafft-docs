@@ -59,13 +59,13 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://drafft.aboni.dev/en/docs/documentation/API_docs.html">
+<meta property="og:url" content="https://drafft.aboni.dev/en/docs/documentation/api_docs.html">
 <meta property="og:title" content="Api Docs · Drafft">
 <meta property="og:description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://drafft.aboni.dev/en/docs/documentation/API_docs.html">
+<meta property="twitter:url" content="https://drafft.aboni.dev/en/docs/documentation/api_docs.html">
 <meta property="twitter:title" content="Api Docs · Drafft">
 <meta property="twitter:description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
 </head>
@@ -234,7 +234,7 @@
 </li>
 <!--  -->
 <li class="menu-item">
-  <a href="/en/docs/documentation/API_docs.html">
+  <a href="/en/docs/documentation/api_docs.html">
     <strong> Api Docs  </strong></a>
 </li>
 <!--  -->
@@ -269,6 +269,7 @@ It is an App Setting and can be enabled in options.</p>
 <p>Accepted Values: <code>ProjectSettings</code> <code>GDD</code> <code>Scripts</code> <code>Actors</code> <code>Quests</code> <code>Items</code> <code>Misc</code> <code>Grids</code> <code>Kanban</code></p>
 <pre class="hljs"><label class="language-caption"></label><code>GET /game-export?collections=Scripts,Items,Actors
 </code></pre>
+<p><img src="/img/api-game-export.png" alt=""></p>
 <h3 id="get-database-dump" tabindex="-1">Get Database Dump <a class="header-anchor" href="#get-database-dump">¶</a></h3>
 <p>Gets a database dump directly from the PouchDB instance. It accepts any <a href="https://pouchdb.com/api.html#batch_fetch">PouchDB allDocs options</a>.
 Default options are <code>include_docs: true</code> and <code>options.attachments: true</code></p>
