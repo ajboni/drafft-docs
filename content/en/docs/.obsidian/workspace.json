@@ -1,0 +1,151 @@
+{
+  "main": {
+    "id": "5f09e6d192bea329",
+    "type": "split",
+    "children": [
+      {
+        "id": "40ae44187b40763b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7ac162e29f57723e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05__documentation/01__scripting.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3d1716a59b9bb3d5",
+    "type": "split",
+    "children": [
+      {
+        "id": "b1f4c3ef0eb32c06",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "20cfe56b1a54970b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8b18c28e3fa53c78",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4c5b206df19104ab",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "568a7392fddac12a",
+    "type": "split",
+    "children": [
+      {
+        "id": "818966545603911d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e65f7737dccfbea3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "05__documentation/01__scripting.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "137950efc76373b6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "05__documentation/01__scripting.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "cbd6597a0c6202b3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e51f2122f9741b4c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "05__documentation/01__scripting.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "7ac162e29f57723e",
+  "lastOpenFiles": [
+    "05__documentation/001__quick_start.md",
+    "01__download_from_itchio copy.md",
+    "05__documentation/01__scripting.md",
+    "img/scripting-02.png.md",
+    "04__features/02__script_editor.md",
+    "05__documentation/04__exporting.md",
+    "05__documentation/03__multiuser.md",
+    "index.md",
+    "02__forums.md"
+  ]
+}

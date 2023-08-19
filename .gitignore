@@ -37,3 +37,5 @@ jspm_packages/
 # dotenv environment variables file
 .env
 .env.test
+
+content/.obsidian

@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Script editor for game development · Drafft</title>
+    <title>Api Docs · Drafft</title>
 
-    <meta name="description" content="Drafft's powerful script editor uses simple plain text to tell your game's characters exactly what to do and how to do it.">
+    <meta name="description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
     <link rel="stylesheet" href="/css/docs.css">
     <link rel="preload" href="/css/flags-css/flag-icon.min.css" as="style">
     <link rel="preload" href="/js/fuse/fuse.min.js" as="script">
@@ -54,23 +54,21 @@
     <link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2160x1620.png">
   
 <!-- Google / Search Engine Tags -->
-<meta itemprop="name" content="Script editor for game development · Drafft">
-<meta itemprop="description" content="Drafft's powerful script editor uses simple plain text to tell your game's characters exactly what to do and how to do it.">
-<meta itemprop="image" content="https://drafft.aboni.dev/img/scripting-02.png">
+<meta itemprop="name" content="Api Docs · Drafft">
+<meta itemprop="description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://drafft.aboni.dev/en/docs/features/script_editor.html">
-<meta property="og:title" content="Script editor for game development · Drafft">
-<meta property="og:description" content="Drafft's powerful script editor uses simple plain text to tell your game's characters exactly what to do and how to do it.">
+<meta property="og:url" content="https://drafft.aboni.dev/en/docs/documentation/API_docs.html">
+<meta property="og:title" content="Api Docs · Drafft">
+<meta property="og:description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
 
-	  <meta property="og:image" content="https://drafft.aboni.dev/img/scripting-02.png">
-	  
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://drafft.aboni.dev/en/docs/features/script_editor.html">
-<meta property="twitter:title" content="Script editor for game development · Drafft">
-<meta property="twitter:description" content="Drafft's powerful script editor uses simple plain text to tell your game's characters exactly what to do and how to do it.">
-<meta property="twitter:image" content="https://drafft.aboni.dev/img/scripting-02.png"></head>
+<meta property="twitter:url" content="https://drafft.aboni.dev/en/docs/documentation/API_docs.html">
+<meta property="twitter:title" content="Api Docs · Drafft">
+<meta property="twitter:description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+</head>
 
 
 
@@ -127,7 +125,7 @@
 <!--  -->
 <div class="accordion-container">
   <div class="accordion">
-    <input id="accordion-features" type="checkbox" name="docs-accordion-features" hidden="" checked="">
+    <input id="accordion-features" type="checkbox" name="docs-accordion-features" hidden="">
     <label class="accordion-header c-hand" for="accordion-features">
       <i class="icon icon-arrow-right"></i>
 
@@ -142,7 +140,7 @@
 <!--  -->
 <li class="menu-item">
   <a href="/en/docs/features/script_editor.html">
-    <strong> Script Editor  </strong></a>
+     Script Editor </a>
 </li>
 <!--  -->
 <li class="menu-item">
@@ -202,7 +200,7 @@
 <!--  -->
 <div class="accordion-container">
   <div class="accordion">
-    <input id="accordion-documentation" type="checkbox" name="docs-accordion-documentation" hidden="">
+    <input id="accordion-documentation" type="checkbox" name="docs-accordion-documentation" hidden="" checked="">
     <label class="accordion-header c-hand" for="accordion-documentation">
       <i class="icon icon-arrow-right"></i>
 
@@ -237,7 +235,7 @@
 <!--  -->
 <li class="menu-item">
   <a href="/en/docs/documentation/API_docs.html">
-     Api Docs </a>
+    <strong> Api Docs  </strong></a>
 </li>
 <!--  -->
       </ul>
@@ -249,19 +247,41 @@
       <a class="off-canvas-overlay" href="#close"></a>
 
       <div class="docs-wrapper">
-        <article class="docs-content" id="docs-content-container"><h1 id="scripting" tabindex="-1">SCRIPTING <a class="header-anchor" href="#scripting">¶</a></h1>
-<p>Drafft’s powerful script editor uses simple plain text to tell your game’s characters exactly what to do and how to do it. With highlighted syntax keeping everything easy to read, Drafft’s scripting is a joy to use.</p>
-<p><img src="/img/scripting-01.png" alt="Script Editor Example"></p>
-<p>Drafft supports scripting in several languages complimenting each one with its very simple own speech language which helps to extract and identify text for voice-overs, expressions, commands and functions.</p>
-<p>Everything is converted to standard JSON when exporting, making the import process on the game engine quite straightforward.</p>
-<h2 id="screenplays" tabindex="-1">Screenplays <a class="header-anchor" href="#screenplays">¶</a></h2>
-<p>It also features auto generated standard screenplay documents.</p>
-<p><img src="/img/scripting-02.png" alt="Screenplay Example"></p>
+        <article class="docs-content" id="docs-content-container"><h1 id="api-documentation" tabindex="-1">API Documentation <a class="header-anchor" href="#api-documentation">¶</a></h1>
+<p>Drafft comes with an optional REST API for querying on a loaded project.
+It is an App Setting and can be enabled in options.</p>
+<blockquote>
+<p>For now, this will only work if Drafft is running and a project is loaded.</p>
+</blockquote>
+<h2 id="app-options" tabindex="-1">APP Options <a class="header-anchor" href="#app-options">¶</a></h2>
+<ul>
+<li><code>Enable API</code>: If true a REST API will be started when opening a project.</li>
+<li><code>API Key</code>: This API key will need to be present in the request header as <code>x-api-key</code></li>
+<li><code>API Port</code>: The port where the server will listen to connections. Default 9001</li>
+</ul>
+<p><img src="/img/api-options-01.png" alt="Api Options"></p>
+<h2 id="api-reference" tabindex="-1">API Reference <a class="header-anchor" href="#api-reference">¶</a></h2>
+<h3 id="get-game-export" tabindex="-1">Get Game Export <a class="header-anchor" href="#get-game-export">¶</a></h3>
+<p>Gets a game-ready JSON object. Same as clicking “Export Game Content” in the app.</p>
+<pre class="hljs"><label class="language-caption"></label><code>GET /game-export
+</code></pre>
+<p>The exported collections will be as defined in the project settings althought they can be specified for further filtering with a <code>collections</code> field with comma separated values:</p>
+<p>Accepted Values: <code>ProjectSettings</code> <code>GDD</code> <code>Scripts</code> <code>Actors</code> <code>Quests</code> <code>Items</code> <code>Misc</code> <code>Grids</code> <code>Kanban</code></p>
+<pre class="hljs"><label class="language-caption"></label><code>GET /game-export?collections=Scripts,Items,Actors
+</code></pre>
+<h3 id="get-database-dump" tabindex="-1">Get Database Dump <a class="header-anchor" href="#get-database-dump">¶</a></h3>
+<p>Gets a database dump directly from the PouchDB instance. It accepts any <a href="https://pouchdb.com/api.html#batch_fetch">PouchDB allDocs options</a>.
+Default options are <code>include_docs: true</code> and <code>options.attachments: true</code></p>
+<pre class="hljs"><label class="language-caption"></label><code>GET /db-dump
+GET /db-dump
+GET /db-dump?include_docs=false&amp;attachments=false&amp;descending=true
+</code></pre>
+<p><img src="/img/api-db-dump.png" alt="Database Dump"></p>
 
           <!-- Docs content HERE (id='docs-content-container') -->
           <nav id="next-prev-container" class="next-prev-container">
             <!-- Next Previous buttons here -->
-          <div class="prevBtn"><a class="btn-link btn-action" href="/en/docs/features/game_design_document.html" aria-label="Previous document"> <i class="icon icon-back"> </i> Previous: Game Design Document (GDD)</a></div><div class="nextBtn"><a class="btn-link btn-action" href="/en/docs/features/dialogue_tree_editor.html" aria-label="Previous document">Next: Dialogue Tree Editor <i class="icon icon-forward"></i></a></div></nav>
+          <div class="prevBtn"><a class="btn-link btn-action" href="/en/docs/documentation/screenplay_generation.html" aria-label="Previous document"> <i class="icon icon-back"> </i> Previous: Screenplay Generation</a></div><div class="nextBtn"></div></nav>
           <!-- Footer -->
           <footer class="docs-footer" id="footer-container"><p>
   Powered by
