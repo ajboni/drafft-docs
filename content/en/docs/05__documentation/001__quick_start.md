@@ -134,5 +134,46 @@ Another benefit of using  [Drafft Scripting Syntax](scripting.html) is that t ca
 
 In the Director section we will find a list of Actors and properties that we can fill for our game.
 
+You should see `Mother` was added to the list. If you click on the tree item and lock the document you can add data in the different tabs.
+
+#### Bio
+Write a biography or any relevant rich text in the bio tab.
+
+#### Properties 
+In this tab you can add plain text or structured data in `hjson`,  `json` `toml`. If the latter this data will be serialized as JSON when generating the game export.
+
+Name, age and gender are automatically created at random when a new actor is detected. 
+
+#### Expressions
+A list of images to use when a script using `UAF` calls an expression `[expression]`. In hour example before we added `[happy]` so go ahead and click on `Add Expression` an add a picture for the happy expression.
+
+
+![](/img/tutorial-adding-actor-expression.png)
+
+> Expressions are saved in lower case in the database, thus the matching is case-insensitive.
+
+We can now go and test our script in the player, but , first, take a look at the remaining tabs.
+
+#### Tagged/Speech Scripts
+
+These tabs display all scripts associated with an actor. Tagged scripts will only show lines which contains `[#tag]` tags.  Useful for example, to generate exports for voice actors. 
+
+You will notice that there is a comment before the lines indicating the script id , alias, and node name.
+
+![Actor tagged scripts](/img/tutorial-actor-tagged-scripts.png)
+
+We can navigate to the dialogue or we can use the node name to identify the script in the script section (Remember, the dialogue node contains a linked script)
+
+There is a special read-only folder inside the script section which includes all the dialogue scripts grouped by dialogue. 
+
+![Actor script player](/img/tutorial-dialogue-script-player.png)
+
+This section also contains a script player, but only scoped to the current script. Go ahead an try the new Mother expression.
+
+![Actor Expression in Script Player](/img/tutorial-actor-expression-in-script-player.png)
+## Screenplays
+
+While we are here, you can click on `Screenplay` toolbar button, to see/download the current screenplay in a script format. This particular project does not contains much screenplay comments but there is more info [in the docs](/en/docs/documentation/screenplay_generation.html)
+
 To Be continued... 
 > In the meantime, if you need help please visit [the Drafft forums](https://baj.itch.io/drafft/community)
