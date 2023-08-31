@@ -339,6 +339,30 @@ You will notice two items in the file tree: <code>goToLibrary</code> is a really
 </blockquote>
 <h2 id="director-section" tabindex="-1">Director Section <a class="header-anchor" href="#director-section">¶</a></h2>
 <p>In the Director section we will find a list of Actors and properties that we can fill for our game.</p>
+<p>You should see <code>Mother</code> was added to the list. If you click on the tree item and lock the document you can add data in the different tabs.</p>
+<h4 id="bio" tabindex="-1">Bio <a class="header-anchor" href="#bio">¶</a></h4>
+<p>Write a biography or any relevant rich text in the bio tab.</p>
+<h4 id="properties" tabindex="-1">Properties <a class="header-anchor" href="#properties">¶</a></h4>
+<p>In this tab you can add plain text or structured data in <code>hjson</code>,  <code>json</code> <code>toml</code>. If the latter this data will be serialized as JSON when generating the game export.</p>
+<p>Name, age and gender are automatically created at random when a new actor is detected.</p>
+<h4 id="expressions" tabindex="-1">Expressions <a class="header-anchor" href="#expressions">¶</a></h4>
+<p>A list of images to use when a script using <code>UAF</code> calls an expression <code>[expression]</code>. In hour example before we added <code>[happy]</code> so go ahead and click on <code>Add Expression</code> an add a picture for the happy expression.</p>
+<p><img src="/img/tutorial-adding-actor-expression.png" alt=""></p>
+<blockquote>
+<p>Expressions are saved in lower case in the database, thus the matching is case-insensitive.</p>
+</blockquote>
+<p>We can now go and test our script in the player, but , first, take a look at the remaining tabs.</p>
+<h4 id="tagged%2Fspeech-scripts" tabindex="-1">Tagged/Speech Scripts <a class="header-anchor" href="#tagged%2Fspeech-scripts">¶</a></h4>
+<p>These tabs display all scripts associated with an actor. Tagged scripts will only show lines which contains <code>[#tag]</code> tags.  Useful for example, to generate exports for voice actors.</p>
+<p>You will notice that there is a comment before the lines indicating the script id , alias, and node name.</p>
+<p><img src="/img/tutorial-actor-tagged-scripts.png" alt="Actor tagged scripts"></p>
+<p>We can navigate to the dialogue or we can use the node name to identify the script in the script section (Remember, the dialogue node contains a linked script)</p>
+<p>There is a special read-only folder inside the script section which includes all the dialogue scripts grouped by dialogue.</p>
+<p><img src="/img/tutorial-dialogue-script-player.png" alt="Actor script player"></p>
+<p>This section also contains a script player, but only scoped to the current script. Go ahead an try the new Mother expression.</p>
+<p><img src="/img/tutorial-actor-expression-in-script-player.png" alt="Actor Expression in Script Player"></p>
+<h2 id="screenplays" tabindex="-1">Screenplays <a class="header-anchor" href="#screenplays">¶</a></h2>
+<p>While we are here, you can click on <code>Screenplay</code> toolbar button, to see/download the current screenplay in a script format. This particular project does not contains much screenplay comments but there is more info <a href="/en/docs/documentation/screenplay_generation.html">in the docs</a></p>
 <p>To Be continued…</p>
 <blockquote>
 <p>In the meantime, if you need help please visit <a href="https://baj.itch.io/drafft/community">the Drafft forums</a></p>
