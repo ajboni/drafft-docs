@@ -1,0 +1,398 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Start · Drafft</title>
+
+    <meta name="description" content="Getting familiar with the app with some sample projects.">
+    <link rel="stylesheet" href="/css/docs.css">
+    <link rel="preload" href="/css/flags-css/flag-icon.min.css" as="style">
+    <link rel="preload" href="/js/fuse/fuse.min.js" as="script">
+    <link rel="stylesheet" href="/css/flags-css/flag-icon.min.css">
+    <link rel="shortcut icon" href="/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicons/favicon-48x48.png">
+    <link rel="manifest" href="/favicons/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#fff">
+    <meta name="application-name" content="Drafft">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="/favicons/apple-touch-icon-1024x1024.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Drafft">
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-640x1136.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-750x1334.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-828x1792.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1125x2436.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1242x2208.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1242x2688.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1536x2048.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1668x2224.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1668x2388.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-2048x2732.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1620x2160.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-1136x640.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-1334x750.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-1792x828.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2436x1125.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2208x1242.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2688x1242.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2048x1536.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2224x1668.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2388x1668.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2732x2048.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2160x1620.png">
+  
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="Quick Start · Drafft">
+<meta itemprop="description" content="Getting familiar with the app with some sample projects.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://drafft.aboni.dev/en/docs/documentation/quick_start.html">
+<meta property="og:title" content="Quick Start · Drafft">
+<meta property="og:description" content="Getting familiar with the app with some sample projects.">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://drafft.aboni.dev/en/docs/documentation/quick_start.html">
+<meta property="twitter:title" content="Quick Start · Drafft">
+<meta property="twitter:description" content="Getting familiar with the app with some sample projects.">
+</head>
+
+
+
+
+
+  <body>
+    <header class="docs-navbar" id="navbar-container"><div class="navbar-left">
+  <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar-container" aria-label="Toggle Sidebar">
+    <i class="icon icon-menu"> </i>
+  </a>
+
+  <div class="docs-brand">
+    <a class="docs-logo" href="/en/docs/"><img src="/img/logo_white_2.png" alt="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+      <!-- <div class="project-name">Drafft</div> -->
+      <small class="label label-secondary text-bold">DOCS</small>
+    </a>
+  </div>
+</div>
+
+<div class="navbar-center">
+  <a class="docs-logo" href="en/docs/">
+    <img src="/img/logo_white_2.png" alt="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+  </a>
+</div>
+<nav class="navbar-right">
+  <!--  -->
+  <a class="btn btn-primary" href="https://baj.itch.io/drafft" target="__blank">Download </a>
+  <!--  -->
+
+  <!--  -->
+</nav>
+</header>
+
+    <div class="docs-container off-canvas off-canvas-sidebar-show">
+      <nav class="docs-sidebar off-canvas-sidebar" id="sidebar-container"><div class="docs-nav">
+  <div class="docs-search-container">
+    <input id="docs-search-input" class="docs-search form-input ds-input" type="text" placeholder="Search Docs" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-label="search input" style="position: relative; vertical-align: top" dir="auto">
+
+    <span id="docs-search-dropdown-menu" class="docs-search-dropdown-menu" role="listbox">
+      <div class="ds-dataset-1"></div>
+    </span>
+  </div>
+  <!-- Sidebar -->
+<li class="menu-item">
+  <a href="https://baj.itch.io/drafft">
+     Download from Itch.io </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="https://bit.ly/33J1tls">
+     Forums </a>
+</li>
+<!--  -->
+<!--  -->
+<div class="accordion-container">
+  <div class="accordion">
+    <input id="accordion-features" type="checkbox" name="docs-accordion-features" hidden="">
+    <label class="accordion-header c-hand" for="accordion-features">
+      <i class="icon icon-arrow-right"></i>
+
+      Features
+    </label>
+    <div class="accordion-body">
+      <ul class="menu menu-nav">
+<li class="menu-item">
+  <a href="/en/docs/features/game_design_document.html">
+     Game Design Document (GDD) </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/script_editor.html">
+     Script Editor </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/dialogue_tree_editor.html">
+     Dialogue Tree Editor </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/quests.html">
+     Quests </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/items_database.html">
+     Items Database </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/grids_database.html">
+     Grids Database </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/misc_database.html">
+     Misc Database </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/kanban_boards.html">
+     Kanban Boards </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/export-mappings.html">
+     Export Mappings </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/director-module.html">
+     Director Module </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/multi-user.html">
+     Multi User </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/development.html">
+     Development </a>
+</li>
+<!--  -->
+      </ul>
+    </div>
+  </div>
+</div>
+<!--  -->
+<div class="accordion-container">
+  <div class="accordion">
+    <input id="accordion-documentation" type="checkbox" name="docs-accordion-documentation" hidden="" checked="">
+    <label class="accordion-header c-hand" for="accordion-documentation">
+      <i class="icon icon-arrow-right"></i>
+
+      Documentation
+    </label>
+    <div class="accordion-body">
+      <ul class="menu menu-nav">
+<li class="menu-item">
+  <a href="/en/docs/documentation/quick_start.html">
+    <strong> Quick Start  </strong></a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/documentation/scripting.html">
+     Drafft Scripting Syntax </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/documentation/multiuser.html">
+     Multi user feature </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/documentation/exporting.html">
+     Exporting </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/documentation/screenplay_generation.html">
+     Screenplay Generation </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/documentation/api_docs.html">
+     Api Docs </a>
+</li>
+<!--  -->
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+</nav>
+      <a class="off-canvas-overlay" href="#close"></a>
+
+      <div class="docs-wrapper">
+        <article class="docs-content" id="docs-content-container"><h1 id="quick-start" tabindex="-1">Quick Start <a class="header-anchor" href="#quick-start">¶</a></h1>
+<p>A good way to start experimenting with the app is to load a sample project and play around.<br>
+Currently there are two very basic projects:</p>
+<ol>
+<li><a href="https://github.com/ajboni/drafft-examples/blob/main/projects/The%20goddess%20of%20fate..json">The goddess of fate</a>: A Dialogue based visual novel about the zodiac.</li>
+<li><a href="https://github.com/ajboni/drafft-examples/blob/main/projects/One%20Bullet.json">One Bullet</a>: A Mockup for a point and click game about a heist. Work in progress.</li>
+</ol>
+<blockquote>
+<p>If you want to contribute your project to this section, please make a pull request on the <a href="https://github.com/ajboni/drafft-examples">examples repo</a></p>
+</blockquote>
+<h1 id="importing-a-project." tabindex="-1">Importing a project. <a class="header-anchor" href="#importing-a-project.">¶</a></h1>
+<ol>
+<li>Download the example project json file: for this document we will use <a href="https://github.com/ajboni/drafft-examples/blob/main/projects/The%20goddess%20of%20fate..json">The goddess of fate</a>: A Dialogue based visual novel about the zodiac.</li>
+<li>Launch the app.</li>
+<li>Go to <strong>Project Manager</strong> and click on <strong>Restore Database from file in a new project</strong></li>
+<li>Enter a name and click ok.</li>
+<li>Select the json file. The project will load.</li>
+</ol>
+<h1 id="sections" tabindex="-1">Sections <a class="header-anchor" href="#sections">¶</a></h1>
+<p>The left sidebar content will change with all available modules of the app, we will quickly visit each one to get a general overview of the features.</p>
+<h2 id="options" tabindex="-1">Options <a class="header-anchor" href="#options">¶</a></h2>
+<p>You should setup your username here if you are planning to use it in a team. Other options are self explanatory.</p>
+<h2 id="project-manager" tabindex="-1">Project Manager <a class="header-anchor" href="#project-manager">¶</a></h2>
+<p>This is where you can create, load, delete and restore projects. Not much to do here now.</p>
+<h2 id="project-settings" tabindex="-1">Project Settings <a class="header-anchor" href="#project-settings">¶</a></h2>
+<p>This is where you can set up project options and metadata and certain default behaviours.<br>
+A very important section here is the <strong>Export Options</strong> page where you can set up different mappings that will be applied when generating the game export as well as what sections will be exported.</p>
+<h2 id="design-documents" tabindex="-1">Design Documents <a class="header-anchor" href="#design-documents">¶</a></h2>
+<p>Here is the place where to add documents, notes, story bits, etc.
+You will notice the loaded project has a “summary” document, if you try to edit it you will not be able to do so. That’s because the document is not “locked for editing”.</p>
+<h2 id="editing-documents" tabindex="-1">Editing documents <a class="header-anchor" href="#editing-documents">¶</a></h2>
+<p>Drafft supports realtime collaboration, with the condition that each user “locks” the document that they are working on to avoid concurrency issues.<br>
+Even when using the app as a single user, each document will need to be locked before it being able to be modified.</p>
+<p>Go ahead and click the edit button on the toolbar. Some actions on the toolbar like delete or rename will be available now. Also notice that there should be a padlock icon with your username simbolizing the status of the document.</p>
+<blockquote>
+<p>You can double-click on the doc text to lock the document (works also on scripts).</p>
+</blockquote>
+<p>Make some changes to the file and click the save button. The file icon should disappear and the file will be available to other user.</p>
+<p>You can have a play exploring the file creation or editing processes, also take a look at the timeline feature if you want. Once ready lets move to the script section.</p>
+<h2 id="scripts" tabindex="-1">Scripts <a class="header-anchor" href="#scripts">¶</a></h2>
+<p>This is one of the main sections of the app, a script is data that you will provide to your game and it can be written in any language.<br>
+A script could be a standalone document or be part of a dialogue tree. Instead of relying on writing int each dialogue tree node, each node will have its own script attached, but more on that later.<br>
+You will notice two items in the file tree: <code>goToLibrary</code> is a really simple script executing a <strong>command</strong> and a special read-only “Dialogues” folder which contains all scripts that are part of a dialogue Documents, lets ignore that for now.</p>
+<ul>
+<li>Select <code>goToLibrary</code> and double-click on the text area. Press the <code>Toggle editor hotkeys panel</code> button. This will open a sidebar on the right with some shortcuts, these will be really useful for repetitive tasks like adding speech actions.</li>
+<li>Modify <code>ctrl+4</code> shortcut and add the following: <code>::Narrator:: % deals % damage.</code></li>
+<li>Focus the text area and press <code>ctrl+4</code>. Each time a <code>%</code> appears in the shortcut it will ask the user for a value. Put <code>Max</code> and <code>66</code> or whatever you want there.</li>
+</ul>
+<p>You will also notice that <code>&lt;PlayDialogueByAlias(area)&gt;</code> and <code>::Narrator::</code> are highlighted differently and that is because they are part of the really small <a href="scripting.html">Drafft Scripting Syntax</a>. Go have a read on that page document for a quick overview. I’ll wait…</p>
+<p>Also note that this script has and <code>id</code> and an <code>alias</code> shown in the script editor footer.</p>
+<video controls="" width="50%" style="margin-left: 25%;margin-right:25%">
+  <source src="/img/tutorial-02.webm" type="video/webm">
+</video>
+<h2 id="dialogues" tabindex="-1">Dialogues <a class="header-anchor" href="#dialogues">¶</a></h2>
+<p>The script concept can also be applied to dialogues. Drafft will give the chance to design a dialogue tree with the possibility to attach a script to each node. The way of structuring a dialogue tree is up to you, but the intended idea is to do linear logic inside the script, and use the tree as a branching mechanism. This will make the tree less convoluted.</p>
+<p>A dialogue tree consist in a series of nodes interconnected (or not).  Drafft provides 5 different nodes which should be enough to implement any logic in combination with a script.</p>
+<ul>
+<li><code>Start</code> node its a <code>1 Output</code> node, its intended usage is for the developer to identify where to position the dialogue when starting it.</li>
+<li><code>Script</code> node is a <code>1 Input -&gt; 1 Output</code> node that carries an associated script. This is intended for running game logic or linear dialogue.</li>
+<li><code>Choice</code> node is  a <code>1 Input -&gt; n Outputs</code> node intended for branching logic.</li>
+<li><code>End</code>  nodes is a <code>1 Input only</code> node intended to provide a flag on where a branch hit a dead.</li>
+<li>Similarly the <code>Return</code> node is  <code>1 Input only</code> node intended to provide aflags on where a branch hit a dead and should return to the choice node, or any other custom logic. This is to avoid populating the graph with lots of arrows going back.</li>
+</ul>
+<blockquote>
+<p>Even though the script node is intended to provide scripting logic, any node can have a linked  script.</p>
+</blockquote>
+<p><img src="/img/tutorial-03.png" alt=""></p>
+<p>Go to the <code>Dialogues</code> section and load the <code>Aries - 01 - Aries Ecounter</code> dialogue and click each node to inspect the associated script. Feel free to experiment editing and moving/linking nodes.</p>
+<p><img src="/img/tutorial-04.png" alt=""></p>
+<p>With the document locked for edits, select the first node , the green starting node and add a few lines at the start:</p>
+<pre class="hljs"><label class="language-caption"></label><code>::Mother:: I saw Kenji walking all day looking for something.
+::Mother:: Maybe he has a new job.
+::Mother:: [Happy] Finally!
+</code></pre>
+<h3 id="detecting-actors" tabindex="-1">Detecting Actors <a class="header-anchor" href="#detecting-actors">¶</a></h3>
+<p>In order to update the Actor database we can simply click the <code>Auto Detect Actors</code> button in the toolbar. Click it, we will come back to this later. You should see a message with the text: “Added 1 Actors: Mother”</p>
+<p><img src="/img/tutorial-auto-detecting-actors.png" alt=""></p>
+<h3 id="generation-voice-over-tags" tabindex="-1">Generation Voice Over Tags <a class="header-anchor" href="#generation-voice-over-tags">¶</a></h3>
+<p>As we are using the Drafft Scripting Syntax (UAF)  we can automatically generate a tag for each dialogue line, so in the future we can link our audio files with each line. This has the trade off to have the script filled with tags but on the other hand we don’t need any kind of metadata db for each line which would probably make the editing experience more tedious. This tag can be of format but <code>UAF</code> identifies them with the following format: <code>[#speechTag]::Actor::Actor Line [expression]</code></p>
+<p>In order to keep that short, unique and identifiable , a combination of the script alias and a short uuid is used for the generation. Go ahead a click the “Generate tags for current script” button. A success message should appear.</p>
+<p>Reopen the node script to see the changes:</p>
+<p><img src="/img/tutorial-voice-over-tag-generation.png" alt=""></p>
+<h3 id="previewing-dialogue" tabindex="-1">Previewing Dialogue <a class="header-anchor" href="#previewing-dialogue">¶</a></h3>
+<p>Drafft comes with a VERY basic dialogue and script player. With the dialogue selected click the  <code>Play Dialogue</code> button.</p>
+<p>In this screen basic navigation can be done to debug the dialogue logic.</p>
+<p><img src="/img/tutorial-preview-dialogue-tree.png" alt="Preview Dialogue Tree"></p>
+<p>Another benefit of using  <a href="scripting.html">Drafft Scripting Syntax</a> is that t can make the previewing process a bit nicer ignoring non-dialogue and getting actors portraits and emotions. The speech only button will only move to <code>::ActorTag::</code> lines.</p>
+<blockquote>
+<p>Clicking on the text box will advance to the next line.</p>
+</blockquote>
+<h2 id="director-section" tabindex="-1">Director Section <a class="header-anchor" href="#director-section">¶</a></h2>
+<p>In the Director section we will find a list of Actors and properties that we can fill for our game.</p>
+<p>You should see <code>Mother</code> was added to the list. If you click on the tree item and lock the document you can add data in the different tabs.</p>
+<h4 id="bio" tabindex="-1">Bio <a class="header-anchor" href="#bio">¶</a></h4>
+<p>Write a biography or any relevant rich text in the bio tab.</p>
+<h4 id="properties" tabindex="-1">Properties <a class="header-anchor" href="#properties">¶</a></h4>
+<p>In this tab you can add plain text or structured data in <code>hjson</code>,  <code>json</code> <code>toml</code>. If the latter this data will be serialized as JSON when generating the game export.</p>
+<p>Name, age and gender are automatically created at random when a new actor is detected.</p>
+<h4 id="expressions" tabindex="-1">Expressions <a class="header-anchor" href="#expressions">¶</a></h4>
+<p>A list of images to use when a script using <code>UAF</code> calls an expression <code>[expression]</code>. In hour example before we added <code>[happy]</code> so go ahead and click on <code>Add Expression</code> an add a picture for the happy expression.</p>
+<p><img src="/img/tutorial-adding-actor-expression.png" alt=""></p>
+<blockquote>
+<p>Expressions are saved in lower case in the database, thus the matching is case-insensitive.</p>
+</blockquote>
+<p>We can now go and test our script in the player, but , first, take a look at the remaining tabs.</p>
+<h4 id="tagged%2Fspeech-scripts" tabindex="-1">Tagged/Speech Scripts <a class="header-anchor" href="#tagged%2Fspeech-scripts">¶</a></h4>
+<p>These tabs display all scripts associated with an actor. Tagged scripts will only show lines which contains <code>[#tag]</code> tags.  Useful for example, to generate exports for voice actors.</p>
+<p>You will notice that there is a comment before the lines indicating the script id , alias, and node name.</p>
+<p><img src="/img/tutorial-actor-tagged-scripts.png" alt="Actor tagged scripts"></p>
+<p>We can navigate to the dialogue or we can use the node name to identify the script in the script section (Remember, the dialogue node contains a linked script)</p>
+<p>There is a special read-only folder inside the script section which includes all the dialogue scripts grouped by dialogue.</p>
+<p><img src="/img/tutorial-dialogue-script-player.png" alt="Actor script player"></p>
+<p>This section also contains a script player, but only scoped to the current script. Go ahead an try the new Mother expression.</p>
+<p><img src="/img/tutorial-actor-expression-in-script-player.png" alt="Actor Expression in Script Player"></p>
+<h2 id="screenplays" tabindex="-1">Screenplays <a class="header-anchor" href="#screenplays">¶</a></h2>
+<p>While we are here, you can click on <code>Screenplay</code> toolbar button, to see/download the current screenplay in a script format. This particular project does not contains much screenplay comments but there is more info <a href="/en/docs/documentation/screenplay_generation.html">in the docs</a></p>
+<p>To Be continued…</p>
+<blockquote>
+<p>In the meantime, if you need help please visit <a href="https://baj.itch.io/drafft/community">the Drafft forums</a></p>
+</blockquote>
+
+          <!-- Docs content HERE (id='docs-content-container') -->
+          <nav id="next-prev-container" class="next-prev-container">
+            <!-- Next Previous buttons here -->
+          <div class="prevBtn"><a class="btn-link btn-action" href="/en/docs/features/development.html" aria-label="Previous document"> <i class="icon icon-back"> </i> Previous: Development</a></div><div class="nextBtn"><a class="btn-link btn-action" href="/en/docs/documentation/scripting.html" aria-label="Previous document">Next: Drafft Scripting Syntax <i class="icon icon-forward"></i></a></div></nav>
+          <!-- Footer -->
+          <footer class="docs-footer" id="footer-container"><p>
+  Powered by
+  <a href="https://github.com/ajboni/docurry" target="_blank">🍛 Docurry</a> · A
+  spicy, zero-config documentation site generator. · Version
+  <span class="version">1</span>
+</p>
+
+</footer>
+        </article>
+
+        
+        <!-- Table of contents will be appended HERE -->
+      </div>
+    </div>
+
+      <script src="/js/fuse/fuse.min.js"></script>
+      <script src="/js/docs-search.js" data-lang="en" data-no_search_result="No results found, try a different query."></script>
+    <script src="/js/docs-toc.js"></script>
+
+
+  
+
+</body></html>

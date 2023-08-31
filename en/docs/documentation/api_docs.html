@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Docs · Drafft</title>
+
+    <meta name="description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+    <link rel="stylesheet" href="/css/docs.css">
+    <link rel="preload" href="/css/flags-css/flag-icon.min.css" as="style">
+    <link rel="preload" href="/js/fuse/fuse.min.js" as="script">
+    <link rel="stylesheet" href="/css/flags-css/flag-icon.min.css">
+    <link rel="shortcut icon" href="/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicons/favicon-48x48.png">
+    <link rel="manifest" href="/favicons/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#fff">
+    <meta name="application-name" content="Drafft">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="/favicons/apple-touch-icon-1024x1024.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Drafft">
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-640x1136.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-750x1334.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-828x1792.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1125x2436.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1242x2208.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1242x2688.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1536x2048.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1668x2224.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1668x2388.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-2048x2732.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/favicons/apple-touch-startup-image-1620x2160.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-1136x640.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-1334x750.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-1792x828.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2436x1125.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2208x1242.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2688x1242.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2048x1536.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2224x1668.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2388x1668.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2732x2048.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/favicons/apple-touch-startup-image-2160x1620.png">
+  
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="Api Docs · Drafft">
+<meta itemprop="description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://drafft.aboni.dev/en/docs/documentation/api_docs.html">
+<meta property="og:title" content="Api Docs · Drafft">
+<meta property="og:description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://drafft.aboni.dev/en/docs/documentation/api_docs.html">
+<meta property="twitter:title" content="Api Docs · Drafft">
+<meta property="twitter:description" content="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+</head>
+
+
+
+
+
+  <body>
+    <header class="docs-navbar" id="navbar-container"><div class="navbar-left">
+  <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar-container" aria-label="Toggle Sidebar">
+    <i class="icon icon-menu"> </i>
+  </a>
+
+  <div class="docs-brand">
+    <a class="docs-logo" href="/en/docs/"><img src="/img/logo_white_2.png" alt="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+      <!-- <div class="project-name">Drafft</div> -->
+      <small class="label label-secondary text-bold">DOCS</small>
+    </a>
+  </div>
+</div>
+
+<div class="navbar-center">
+  <a class="docs-logo" href="en/docs/">
+    <img src="/img/logo_white_2.png" alt="Cross-platform collaborative and organized game development. Dialogue Tree Editor, GDDs Editor, Scripting Editor, and more...">
+  </a>
+</div>
+<nav class="navbar-right">
+  <!--  -->
+  <a class="btn btn-primary" href="https://baj.itch.io/drafft" target="__blank">Download </a>
+  <!--  -->
+
+  <!--  -->
+</nav>
+</header>
+
+    <div class="docs-container off-canvas off-canvas-sidebar-show">
+      <nav class="docs-sidebar off-canvas-sidebar" id="sidebar-container"><div class="docs-nav">
+  <div class="docs-search-container">
+    <input id="docs-search-input" class="docs-search form-input ds-input" type="text" placeholder="Search Docs" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-label="search input" style="position: relative; vertical-align: top" dir="auto">
+
+    <span id="docs-search-dropdown-menu" class="docs-search-dropdown-menu" role="listbox">
+      <div class="ds-dataset-1"></div>
+    </span>
+  </div>
+  <!-- Sidebar -->
+<li class="menu-item">
+  <a href="https://baj.itch.io/drafft">
+     Download from Itch.io </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="https://bit.ly/33J1tls">
+     Forums </a>
+</li>
+<!--  -->
+<!--  -->
+<div class="accordion-container">
+  <div class="accordion">
+    <input id="accordion-features" type="checkbox" name="docs-accordion-features" hidden="">
+    <label class="accordion-header c-hand" for="accordion-features">
+      <i class="icon icon-arrow-right"></i>
+
+      Features
+    </label>
+    <div class="accordion-body">
+      <ul class="menu menu-nav">
+<li class="menu-item">
+  <a href="/en/docs/features/game_design_document.html">
+     Game Design Document (GDD) </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/script_editor.html">
+     Script Editor </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/dialogue_tree_editor.html">
+     Dialogue Tree Editor </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/quests.html">
+     Quests </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/items_database.html">
+     Items Database </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/grids_database.html">
+     Grids Database </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/misc_database.html">
+     Misc Database </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/kanban_boards.html">
+     Kanban Boards </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/export-mappings.html">
+     Export Mappings </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/director-module.html">
+     Director Module </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/multi-user.html">
+     Multi User </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/features/development.html">
+     Development </a>
+</li>
+<!--  -->
+      </ul>
+    </div>
+  </div>
+</div>
+<!--  -->
+<div class="accordion-container">
+  <div class="accordion">
+    <input id="accordion-documentation" type="checkbox" name="docs-accordion-documentation" hidden="" checked="">
+    <label class="accordion-header c-hand" for="accordion-documentation">
+      <i class="icon icon-arrow-right"></i>
+
+      Documentation
+    </label>
+    <div class="accordion-body">
+      <ul class="menu menu-nav">
+<li class="menu-item">
+  <a href="/en/docs/documentation/quick_start.html">
+     Quick Start </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/documentation/scripting.html">
+     Drafft Scripting Syntax </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/documentation/multiuser.html">
+     Multi user feature </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/documentation/exporting.html">
+     Exporting </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/documentation/screenplay_generation.html">
+     Screenplay Generation </a>
+</li>
+<!--  -->
+<li class="menu-item">
+  <a href="/en/docs/documentation/api_docs.html">
+    <strong> Api Docs  </strong></a>
+</li>
+<!--  -->
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+</nav>
+      <a class="off-canvas-overlay" href="#close"></a>
+
+      <div class="docs-wrapper">
+        <article class="docs-content" id="docs-content-container"><h1 id="api-documentation" tabindex="-1">API Documentation <a class="header-anchor" href="#api-documentation">¶</a></h1>
+<p>Drafft comes with an optional REST API for querying on a loaded project.
+It is an App Setting and can be enabled in options.</p>
+<blockquote>
+<p>For now, this will only work if Drafft is running and a project is loaded.</p>
+</blockquote>
+<h2 id="app-options" tabindex="-1">APP Options <a class="header-anchor" href="#app-options">¶</a></h2>
+<ul>
+<li><code>Enable API</code>: If true a REST API will be started when opening a project.</li>
+<li><code>API Key</code>: This API key will need to be present in the request header as <code>x-api-key</code></li>
+<li><code>API Port</code>: The port where the server will listen to connections. Default 9001</li>
+</ul>
+<p><img src="/img/api-options-01.png" alt="Api Options"></p>
+<h2 id="api-reference" tabindex="-1">API Reference <a class="header-anchor" href="#api-reference">¶</a></h2>
+<h3 id="get-game-export" tabindex="-1">Get Game Export <a class="header-anchor" href="#get-game-export">¶</a></h3>
+<p>Gets a game-ready JSON object. Same as clicking “Export Game Content” in the app.</p>
+<pre class="hljs"><label class="language-caption"></label><code>GET /game-export
+</code></pre>
+<p>The exported collections will be as defined in the project settings althought they can be specified for further filtering with a <code>collections</code> field with comma separated values:</p>
+<p>Accepted Values: <code>ProjectSettings</code> <code>GDD</code> <code>Scripts</code> <code>Actors</code> <code>Quests</code> <code>Items</code> <code>Misc</code> <code>Grids</code> <code>Kanban</code></p>
+<pre class="hljs"><label class="language-caption"></label><code>GET /game-export?collections=Scripts,Items,Actors
+</code></pre>
+<p><img src="/img/api-game-export.png" alt=""></p>
+<h3 id="get-database-dump" tabindex="-1">Get Database Dump <a class="header-anchor" href="#get-database-dump">¶</a></h3>
+<p>Gets a database dump directly from the PouchDB instance. It accepts any <a href="https://pouchdb.com/api.html#batch_fetch">PouchDB allDocs options</a>.
+Default options are <code>include_docs: true</code> and <code>options.attachments: true</code></p>
+<pre class="hljs"><label class="language-caption"></label><code>GET /db-dump
+GET /db-dump
+GET /db-dump?include_docs=false&amp;attachments=false&amp;descending=true
+</code></pre>
+<p><img src="/img/api-db-dump.png" alt="Database Dump"></p>
+
+          <!-- Docs content HERE (id='docs-content-container') -->
+          <nav id="next-prev-container" class="next-prev-container">
+            <!-- Next Previous buttons here -->
+          <div class="prevBtn"><a class="btn-link btn-action" href="/en/docs/documentation/screenplay_generation.html" aria-label="Previous document"> <i class="icon icon-back"> </i> Previous: Screenplay Generation</a></div><div class="nextBtn"></div></nav>
+          <!-- Footer -->
+          <footer class="docs-footer" id="footer-container"><p>
+  Powered by
+  <a href="https://github.com/ajboni/docurry" target="_blank">🍛 Docurry</a> · A
+  spicy, zero-config documentation site generator. · Version
+  <span class="version">1</span>
+</p>
+
+</footer>
+        </article>
+
+        
+        <!-- Table of contents will be appended HERE -->
+      </div>
+    </div>
+
+      <script src="/js/fuse/fuse.min.js"></script>
+      <script src="/js/docs-search.js" data-lang="en" data-no_search_result="No results found, try a different query."></script>
+    <script src="/js/docs-toc.js"></script>
+
+
+  
+
+</body></html>
