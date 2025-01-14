@@ -15,3 +15,4 @@ img: /img/dialogue-tree-editor.png
 
 - [Learn More](/en/docs)
 - [Download](https://baj.itch.io/drafft)
+- [Version 2.0](https://drafft.dev)
